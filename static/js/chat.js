@@ -169,7 +169,12 @@ celdas.forEach(celda => {
   function sendMessage() {
     const message = messageInput.value.trim();
 
-    fetch(apiUrl+'/generate_uuid')
+    fetch(apiUrl+'/generate_uuid', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     .then(response => response.json())
       .then(data => {
         
