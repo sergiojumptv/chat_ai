@@ -437,7 +437,7 @@ def clear_chats():
     chat.clearChat()
     return '', 200'''
 
-@app.route('/', methods=['POST'])
+@app.route('/send_message', methods=['POST'])
 def sendmessage():
     if 'username' not in session:
         return redirect(url_for('index'))
