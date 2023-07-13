@@ -197,7 +197,7 @@ celdas.forEach(celda => {
         uuid:uuid_gen
       };
 
-      fetch(apiUrl+'/generate_uuid', {
+      fetch(apiUrl+'/send_message', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
