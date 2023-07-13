@@ -4,7 +4,7 @@ from flask_cors import CORS
 import json
 from chat_vertex import vertex_petition
 from flask_session import Session
-
+import asyncio
 import os
 import uuid
 import time
@@ -155,13 +155,13 @@ class Chat():
 
     def gpt_select(self, prompt):
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
-        '''response = asyncio.run(vertex_petition(prompt))'''
+        response = asyncio.run(vertex_petition(prompt))
         # if response['usage']['total_tokens']>3300:
         # self.reduce_tokens()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
         #print(response)
         time.sleep(5)
-        return 'response'
+        return response
 
     def try_error(self, prompt, select, e):
         valid = False
