@@ -1,9 +1,7 @@
 import vertexai
 from vertexai.preview.language_models import ChatModel, InputOutputTextPair
-import asyncio
-import aiohttp
 import os
-vertex_credentials = '/var/root/.config/gcloud/application_default_credentials.json'
+vertex_credentials = '/root/.config/gcloud/application_default_credentials.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
 vertexai.init(project="services-pro-368012", location="us-central1")
 chat_model = ChatModel.from_pretrained("chat-bison@001")

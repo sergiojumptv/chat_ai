@@ -18,7 +18,7 @@ CORS(app)
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'bigquery_credentials.json'
 client = bigquery.Client()
-vertex_credentials = '/var/root/.config/gcloud/application_default_credentials.json'
+vertex_credentials = '/root/.config/gcloud/application_default_credentials.json'
 bigquery_credentials = 'bigquery_credentials.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
 
