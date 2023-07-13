@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://127.0.0.1:8080";
+  const apiUrl = "http://127.0.0.1:8000";
   get_prompts()
   get_conversation_of_prompt("default_prompt")
   function crearTabla(data) {
@@ -79,7 +79,7 @@ celdas.forEach(celda => {
     
   }
   function get_prompts() {
-    fetch('http://127.0.0.1:8080/get_prompts', {
+    fetch('http://127.0.0.1:8000/get_prompts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ celdas.forEach(celda => {
   }
 
   clearChats.addEventListener("click", function () {
-    fetch('http://127.0.0.1:8080/clear_chats', {
+    fetch('http://127.0.0.1:8000/clear_chats', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ celdas.forEach(celda => {
   }
 
   function savePrompt(name) {
-    const apiUrl = "http://127.0.0.1:8080/save-prompt"; // URL de la API para guardar el nombre
+    const apiUrl = "http://127.0.0.1:8000/save-prompt"; // URL de la API para guardar el nombre
 
     const data = {
       name: name
@@ -254,7 +254,7 @@ celdas.forEach(celda => {
   }
   function get_conversation_of_prompt(name) {
     current_prompt=name
-    const apiUrl = "http://127.0.0.1:8080/get_conversation_of_prompt"; // URL de la API para guardar el nombre
+    const apiUrl = "http://127.0.0.1:8000/get_conversation_of_prompt"; // URL de la API para guardar el nombre
 
     const data = {
       name: name

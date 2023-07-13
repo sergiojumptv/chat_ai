@@ -2,7 +2,6 @@ from google.cloud import bigquery
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 from flask_cors import CORS
 import json
-import asyncio
 from chat_vertex import vertex_petition
 from flask_session import Session
 
@@ -485,4 +484,4 @@ def index():
         return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)

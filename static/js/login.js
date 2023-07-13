@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var usernameInput = document.getElementById('username');
       var username = usernameInput.value;
       console.log(username)
-      fetch('http://127.0.0.1:8080/login', {
+      fetch('http://127.0.0.1:8000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
