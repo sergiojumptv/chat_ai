@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://127.0.0.1:8000";
+  const apiUrl = "http://34.68.223.245:8000";
   get_prompts()
   get_conversation_of_prompt("default_prompt")
   function crearTabla(data) {
@@ -79,7 +79,7 @@ celdas.forEach(celda => {
     
   }
   function get_prompts() {
-    fetch('http://127.0.0.1:8000/get_prompts', {
+    fetch(apiUrl+'/get_prompts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ celdas.forEach(celda => {
   }
 
   clearChats.addEventListener("click", function () {
-    fetch('http://127.0.0.1:8000/clear_chats', {
+    fetch(apiUrl+'/clear_chats', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -168,7 +168,7 @@ celdas.forEach(celda => {
 
   function sendMessage() {
     const message = messageInput.value.trim();
-    fetch('/generate_uuid')
+
       .then(response => response.json())
       .then(data => {
         
@@ -191,7 +191,7 @@ celdas.forEach(celda => {
         uuid:uuid_gen
       };
 
-      fetch(apiUrl, {
+      fetch(apiUrl+'/generate_uuid', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -224,13 +224,13 @@ celdas.forEach(celda => {
   }
 
   function savePrompt(name) {
-    const apiUrl = "http://127.0.0.1:8000/save-prompt"; // URL de la API para guardar el nombre
+ // URL de la API para guardar el nombre
 
     const data = {
       name: name
     };
 
-    fetch(apiUrl, {
+    fetch(apiUrl+'/save-prompt', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -254,13 +254,13 @@ celdas.forEach(celda => {
   }
   function get_conversation_of_prompt(name) {
     current_prompt=name
-    const apiUrl = "http://127.0.0.1:8000/get_conversation_of_prompt"; // URL de la API para guardar el nombre
+
 
     const data = {
       name: name
     };
 
-    fetch(apiUrl, {
+    fetch(apiUrl+"/get_conversation_of_prompt", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
