@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Página con Chat</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.min.js
+"></script>
+
+</head>
+<body>
+
+  <main>
+    
+    <div class="chat">
+      <div class="chat_prompts", id="chat_prompts">
+        
+      </div>
+      <div class="chat-container">
+        
+        <div class="chat-messages" id="chat-messages">
+          <!-- Aquí se mostrarán los mensajes del chat -->
+        </div>
+        <div class="chat-input">
+          <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+          <button id="send-button">Enviar</button>
+          <button id="mostrarTabla">Mostrar Tabla</button>
+          <button id="save-button">Guardar</button>
+          <button id="clear-chats">Clear Chats</button>
+        </div>
+      </div>
+    </div>
+    <div id="tabla-container">
+      <img class="salir-btn" id="salir-tabla" src="{{ url_for('static', filename='images/salir.png') }}" alt="Salir">
+      
+  </div>
+  </main>
+
+
+</body>
+</html>

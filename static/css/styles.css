@@ -1,0 +1,200 @@
+/* styles.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#tabla-container {
+  display: none;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+  background-color: white;
+  padding: 20px;
+  padding-top: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+
+}
+#tabla-container  table{
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+#tabla-container th,
+#tabla-container td {
+  padding: 10px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+#tabla-container th {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabla-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#tabla-container tr:hover {
+  border: 1px solid black;
+}
+/* Estilo de las filas impares */
+#tabla-container tr:nth-child(odd) {
+  background-color: #e4e4e4;
+}
+.salir-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.my-button {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+
+.chat{
+  box-sizing: border-box;
+  background-color: #808080;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 10px;
+
+}
+
+.chat-container {
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+  grid-column:2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.chat-messages {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 5px;
+  flex-direction: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: flex-end;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 5px;
+}
+
+.chat-input button {
+  padding: 5px 10px;
+  margin-left: 5px; /* Espacio adicional entre el campo de entrada y el botón */
+}
+.message {
+  background-color: aquamarine;
+  border-radius: 5px;
+  padding: 7px;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom:10px;
+  animation: fadeIn 1s ease forwards;
+  max-width: 500px;
+  height: auto;
+  overflow-wrap:anywhere;
+}
+
+.message[author="user"]{
+  align-self: flex-end;
+  background-color: lightgreen;
+  padding-left: 17px;
+}
+.message[author="bot"]{
+  background-color: lightblue;
+  align-self: flex-start;
+  padding-right: 17px;
+}
+.message[select=True]{
+  cursor:pointer;
+  
+}
+
+.chat_prompts{
+  box-sizing: border-box;
+  padding: 10px;
+  grid-column:1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  background-color: #494949;
+  border-radius: 10px;
+}
+.like {
+  align-self: center;
+  margin-left:10px;
+  margin-top: 10px;
+  visibility: hidden;
+  height: 0px;
+  width: 100%;
+  transition: 0.2s;
+
+}
+.button-like{
+  align-self: flex-end;
+  float: end;
+  transition:0.1s;
+  vertical-align: center;
+  width: 20px;
+  height: auto;
+  opacity: 50%;
+  transition: 0.2s;
+}
+
+.prompt {
+  padding: 10px 20px;
+  background-color: lightgreen;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.prompt:hover {
+  background-color: #45a049;
+  transition:0.5s; 
+}
