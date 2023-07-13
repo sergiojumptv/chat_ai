@@ -169,7 +169,8 @@ celdas.forEach(celda => {
   function sendMessage() {
     const message = messageInput.value.trim();
 
-      .then(response => response.json())
+    fetch(apiUrl+'/generate_uuid')
+    .then(response => response.json())
       .then(data => {
         
         uuid_gen=data.uuid

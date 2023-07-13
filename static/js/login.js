@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var formulario = document.getElementById('login-form');
-  
+    const apiUrl = "http://34.68.223.245:8000";
     formulario.addEventListener('submit', function(event) {
       event.preventDefault();
   
       var usernameInput = document.getElementById('username');
       var username = usernameInput.value;
       console.log(username)
-      fetch('http://127.0.0.1:8000/login', {
+      fetch(apiUrl+'/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
