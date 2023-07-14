@@ -17,7 +17,8 @@ def petition(prompt,context,message):
 
     chat = chat_model.start_chat(
             context=context,
-            examples=prompt
+            examples=prompt[:15],
+            messages=prompt[15:]
         )
     response = chat.send_message(message, **parameters)
     return response.text

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://34.68.223.245:8000";
+  const apiUrl = "http://34.31.196.151:8000";
   get_prompts()
   get_conversation_of_prompt("default_prompt")
   function crearTabla(data) {

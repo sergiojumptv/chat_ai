@@ -76,6 +76,18 @@
                     "citations": []
                 },
                 "feedback": ""
+            },
+            {
+                "author": "hello",
+                "content": "Give me a ranking of the top 3 most viewed genres of this year."
+            },
+            {
+                "content": "hello! how are you",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": ""
             }
         ]
     }
