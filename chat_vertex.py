@@ -1,13 +1,17 @@
 import vertexai
 from custom_vertex import ChatModel
 import os
+import dataclasses
 vertex_credentials = '/root/.config/gcloud/application_default_credentials.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
 vertexai.init(project="services-pro-368012", location="us-central1")
 chat_model = ChatModel.from_pretrained("chat-bison@001")
 
 
-
+@dataclasses.dataclass
+class InputOutputTextPair:
+    input_text: str
+    output_text: str
 
 def petition(context,messages,examples,message):
     chat_model = ChatModel.from_pretrained("chat-bison@001")
@@ -35,8 +39,8 @@ async def vertex_petition(prompt:list):
             input_text={'author':message["author"],'content':message["content"]}
         elif message["author"]=='bot':
             output_text={'author':message["author"],'content':message["content"]}
-            examples.append(input_text)
-            examples.append(output_text)
+            inout=InputOutputTextPair(input_text,output_text)
+            examples.append(inout)
     context=prompt[0]['content']
     message=prompt[-1]['content']
     return petition(context,messages,examples,message)
