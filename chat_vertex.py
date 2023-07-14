@@ -12,7 +12,7 @@ chat_model = ChatModel.from_pretrained("chat-bison@001")
 def petition(context,messages,examples,message):
     chat_model = ChatModel.from_pretrained("chat-bison@001")
     chat = chat_model.start_chat(
-        messages,context,examples
+        history=messages,context=context,examples=examples
         )
     response = chat.send_message(message)
     return response.text

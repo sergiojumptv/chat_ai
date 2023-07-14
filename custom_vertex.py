@@ -1007,3 +1007,8 @@ def _uri_join(uri: str, path_fragment: str) -> str:
 
     return uri.rstrip("/") + "/" + path_fragment.lstrip("/")
 
+chat_model = ChatModel.from_pretrained("chat-bison@001")
+chat = chat_model.start_chat(
+    history=[],context=[],examples=[]
+    )
+response = chat.send_message("hello")
