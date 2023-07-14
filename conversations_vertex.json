@@ -78,8 +78,8 @@
                 "feedback": ""
             },
             {
-                "author": "hello",
-                "content": "Give me a ranking of the top 3 most viewed genres of this year."
+                "author": "user",
+                "content": "hello"
             },
             {
                 "content": "hello! how are you",
