@@ -7,7 +7,6 @@ from flask_session import Session
 import asyncio
 import os
 import uuid
-import time
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tu_clave_secreta_aqui'
@@ -52,11 +51,22 @@ class Chat():
         self.conversations['default_prompt']=self.original_prompt.copy()
 
     def give_feedback(self,feedback:dict):
+        feedback_present=False
         for message in self.conversations[self.username][feedback["prompt"]]:
             if message['author']=='bot':
                 if 'uuid' in message:
                     if message["uuid"]==feedback['uuid']:
-                        print('encontrado')
+                        message["feedback"]=feedback['feedback']
+                        with open("feedback.json","r") as f:
+                            feedbacks_json=json.load(f)
+                        for x in range(len(feedbacks_json)):
+                            if feedbacks_json[x]['uuid']==feedback['uuid']:
+                                feedbacks_json[x]['feedback']=feedback['feedback']
+                                feedback_present=True
+                        if not feedback_present:
+                            feedbacks_json.append(message)
+                        with open("feedback.json","w") as f:
+                            json.dump(feedbacks_json,f)
         print('busqueda completa')
 
 
@@ -139,10 +149,10 @@ class Chat():
         return select, False
 
     def execute(self, query):
-
+        print('query=',query)
         # print('execting...')
         query_job = client.query(query)
-        print("\033[2J\033[H", 'executing...')
+        #print("\033[2J\033[H", 'executing...')
         rows = []
         columns = []
         for row in query_job.result(timeout=5):
@@ -160,7 +170,7 @@ class Chat():
         # self.reduce_tokens()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
         #print(response)
-        time.sleep(5)
+
         return response
 
     def try_error(self, prompt, select, e):
@@ -176,7 +186,7 @@ class Chat():
                     "citations": []
                 }
             }
-            print("***************************************")
+            #print("***************************************")
             prepared_user = {
                 "author": 'user',
                 "content": f"La query a dado el siguiente error: {e}. \n intenta hacer la query solucionando el error"
@@ -269,8 +279,8 @@ class Chat():
                     elif '/use' in user_input and len(user_input.split()) > 1:
                         return False
                     else:
-                        print(
-                            f'Comando {user_input} no valido\n Comandos validos:\n\t /new_chat,\n\t /exit,\n\t /save <nombre a guardar>,\n\t /use <nombre a guardar>')
+                            print()
+                        #print(f'Comando {user_input} no valido\n Comandos validos:\n\t /new_chat,\n\t /exit,\n\t /save <nombre a guardar>,\n\t /use <nombre a guardar>')
             return True
         else:
             return False
@@ -293,7 +303,7 @@ class Chat():
 
         return query,no_select,respon_uuid
 
-    def chat(self,gen_uuid="", msg='/new_chat',):
+    def chat(self,gen_uuid="", msg='/new_chat'):
         # try:
         self.result.clear()
         if msg == '':
@@ -447,7 +457,7 @@ def sendmessage():
     ex_request = requestt['text']
     gen_uuid = requestt['uuid']
     print(type(gen_uuid))
-    petition, no_select,gen_uuid = chat.chat(ex_request,gen_uuid)
+    petition, no_select,gen_uuid = chat.chat(gen_uuid,ex_request)
     if not no_select:
         return jsonify({'reply': petition, 'result': chat.result,'uuid':gen_uuid})
     return jsonify({'reply': petition,'uuid':gen_uuid})

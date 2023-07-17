@@ -689,7 +689,9 @@ class _ChatSessionBase:
                 }
                 for example in self._examples
             ]
-
+        print('message=',message)
+        print('examples=',prediction_instance['examples'][-1])
+        print('messages=',prediction_instance['messages'][-1])
         prediction_response = self._model._endpoint.predict(
             instances=[prediction_instance],
             parameters=prediction_parameters,
@@ -1006,9 +1008,3 @@ def _uri_join(uri: str, path_fragment: str) -> str:
     """
 
     return uri.rstrip("/") + "/" + path_fragment.lstrip("/")
-
-chat_model = ChatModel.from_pretrained("chat-bison@001")
-chat = chat_model.start_chat(
-    history=[],context=[],examples=[]
-    )
-response = chat.send_message("hello")

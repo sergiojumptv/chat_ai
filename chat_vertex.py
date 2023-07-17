@@ -1,5 +1,5 @@
 import vertexai
-from custom_vertex import ChatModel
+from custom_vertex import ChatModel, InputOutputTextPair
 import os
 import dataclasses
 vertex_credentials = '/root/.config/gcloud/application_default_credentials.json'
@@ -8,17 +8,18 @@ vertexai.init(project="services-pro-368012", location="us-central1")
 chat_model = ChatModel.from_pretrained("chat-bison@001")
 
 
-@dataclasses.dataclass
-class InputOutputTextPair:
-    input_text: str
-    output_text: str
+
 
 def petition(context,messages,examples,message):
     chat_model = ChatModel.from_pretrained("chat-bison@001")
+    print('*')
     chat = chat_model.start_chat(
         history=messages,context=context,examples=examples
         )
+    print('*')
     response = chat.send_message(message)
+    print('*')
+
     return response.text
 
 
@@ -36,12 +37,15 @@ async def vertex_petition(prompt:list):
             messages.append(inout)
     for message in prompt[:15]:
         if message["author"]=='user':
-            input_text={'author':message["author"],'content':message["content"]}
+
+            input_text=message["content"]
         elif message["author"]=='bot':
-            output_text={'author':message["author"],'content':message["content"]}
-            inout=InputOutputTextPair(input_text,output_text)
+            output_text=message["content"]
+            inout=InputOutputTextPair(input_text= input_text,output_text=output_text)
             examples.append(inout)
     context=prompt[0]['content']
     message=prompt[-1]['content']
+    print('message= ',prompt[-1])
+    print()
     return petition(context,messages,examples,message)
    
