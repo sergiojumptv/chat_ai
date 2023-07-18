@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var formulario = document.getElementById('login-form');
-    const apiUrl = "http://34.31.196.151:8000";
+    const apiUrl = "http://34.68.223.245:8000";
     formulario.addEventListener('submit', function(event) {
       event.preventDefault();
   

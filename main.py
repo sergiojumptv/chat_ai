@@ -236,7 +236,7 @@ class Chat():
                     return response,no_select
 
                 self.execute(select)
-                self.conversations_prepared=self.conversations.copy()[self.current_prompt][-1]['result']=self.result.copy()
+                self.conversations_prepared=self.conversations.copy()[self.username][self.current_prompt][-1]['result']=self.result.copy()
                 # for key in result:
                 # print(str(key))
                 # print(select)
@@ -376,22 +376,24 @@ def get_conversation_of_prompt():
     username=session.get('username')
     if username not in chats:
         chats[username]=Chat(username)
-    chat=chats[username]
+    chat:Chat=chats[username]
     prompt = request.get_json()["name"]
     conversation = chat.conversations.get(username).get(prompt)
 
-    chat.chat("/load " + prompt)
+    chat.current_prompt=prompt
     messages = []
     for item in conversation[chat.tam_default_len:]:
         msg = {
             "author": item["author"],
             "content": item["content"],
+            "uuid":item["uuid"]
         }
-        print(item)
+
         if item["author"] == "bot":
             msg["feedback"] = item["feedback"]
+        
         messages.append(msg)
-    print(messages)
+    print("prompt=",prompt)
     return jsonify(messages)
 
 @app.route("/save-prompt", methods=['POST'])
@@ -434,6 +436,7 @@ def give_feedback():
     "uuid" : data['uuid'],
     "feedback" :data["feedback"]
     }
+    print(feedback_complete)
     chat.give_feedback(feedback_complete)
     return 'Solicitud POST exitosa'
 

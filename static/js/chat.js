@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://34.31.196.151:8000";
+  const apiUrl = "http://127.0.0.1:8000";
   get_prompts()
   get_conversation_of_prompt("default_prompt")
   function crearTabla(data) {
@@ -339,7 +339,7 @@ celdas.forEach(celda => {
       replyElement.setAttribute("author", "user");
     } else if (msg["author"] == "bot") {
       replyElement.setAttribute("author", "bot");
-  
+      
       if ('result' in msg) {
         console.log("hay query");
         replyElement.setAttribute("select", "True");
@@ -367,11 +367,17 @@ celdas.forEach(celda => {
       dislikeButton.id=uuid_gen
       dislikeButton.src = "/static/images/dislike.png";
       likeButton.classList.add("button-like")
-      dislikeButton.classList.add("button-like")
+      dislikeButton.classList.add("button-dislike")
       likeButton.style.float="inline-end"
       dislikeButton.style.float="inline-start"
       buttonsContainer.classList.add("like");
-  
+      if ("feedback" in msg){
+        if (msg["feedback"] =="like"){
+          select_like(likeButton,dislikeButton,"like")
+        }else if (msg["feedback"]=="dislike"){
+          select_like(likeButton,dislikeButton,"dislike")
+        }
+      }
       // Agregar eventos a los botones
       likeButton.addEventListener("click", function() {
         // Acciones cuando se hace clic en "Me gusta"
@@ -422,7 +428,7 @@ celdas.forEach(celda => {
 
     }
     
-    console.log(msg["uuid"])
+    console.log("uuid= ",msg["uuid"])
     chatMessages.appendChild(replyElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }

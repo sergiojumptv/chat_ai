@@ -166,6 +166,8 @@ header {
   align-self: center;
   margin-left:10px;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
   visibility: hidden;
   height: 0px;
   width: 100%;
@@ -177,6 +179,17 @@ header {
   float: end;
   transition:0.1s;
   vertical-align: center;
+  width: 20px;
+  height: auto;
+  opacity: 50%;
+  transition: 0.2s;
+}
+.button-dislike{
+  align-self: flex-end;
+  float: end;
+  transition:0.1s;
+  vertical-align: center;
+  
   width: 20px;
   height: auto;
   opacity: 50%;
