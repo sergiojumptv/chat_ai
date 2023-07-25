@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://34.31.196.151:8000";
+  const apiUrl = "http://34.85.133.207:8000";
   get_prompts()
-  get_conversation_of_prompt("default_prompt")
   function crearTabla(data) {
   var tabla = document.createElement('table');
   current_prompt=""
@@ -115,7 +114,6 @@ celdas.forEach(celda => {
         if (response.ok) {
           console.log('Conversaciones borradas exitosamente');
           get_prompts()
-          get_conversation_of_prompt('default_prompt')
         } else {
           console.log('Hubo un error al borrar las conversaciones');
         }
@@ -129,13 +127,7 @@ celdas.forEach(celda => {
     sendMessage();
   });
 
-  saveButton.addEventListener("click", function () {
-    const name = prompt("Ingrese un nombre:");
 
-    if (name) {
-      savePrompt(name);
-    }
-  });
 
   mostrarTabla.addEventListener("click", function () {
     tablaContainer.style.display = 'block';
@@ -146,6 +138,18 @@ celdas.forEach(celda => {
   })
   function load_prompts() {
     listOfPrompts.innerHTML = ""
+    const save_button=document.createElement("button");
+    save_button.id = "save-button"
+    save_button.textContent = "Guardar";
+    save_button.classList.add("prompt")
+    save_button.addEventListener("click", function () {
+      const name = prompt("Ingrese un nombre:");
+  
+      if (name) {
+        savePrompt(name);
+      }
+    });
+    listOfPrompts.appendChild(save_button);
     saved_prompts.forEach(item => {
 
       console.log("Nombre guardado:", item);
@@ -231,7 +235,7 @@ celdas.forEach(celda => {
 
   function savePrompt(name) {
  // URL de la API para guardar el nombre
-
+    
     const data = {
       name: name
     };

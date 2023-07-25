@@ -7,10 +7,15 @@ from flask_session import Session
 import asyncio
 import os
 import uuid
+import database_manage as db
+
+
+# Open a cursor to perform database operations
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tu_clave_secreta_aqui'
-app.config['SESSION_TYPE'] = 'filesystem'  # Almacenamiento de sesión en el sistema de archivos
+# Almacenamiento de sesión en el sistema de archivos
+app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 CORS(app)
 
@@ -23,93 +28,62 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
 
 
 class Chat():
-
+    
+    #obtener todas las conversaciones de un usuario
     def get_conversations(self):
-        with open('conversations_vertex.json', 'r')as f:
-            self.conversations = json.load(f)
+        self.conversations=db.getAllConversationsPrompts(self.username)
         return self.conversations
-
-    def __init__(self,username):
-        self.username=username
-
+    
+    #inicializacion de objeto chat
+    def __init__(self, username):
+        self.username = username
+        if not db.buscarUsuario(self.username):
+            db.agregarUsuario(self.username)
         self.get_conversations()
-        if self.username not in self.conversations:
-            self.conversations[username]=self.conversations['default_user'].copy()
-            self.include_in_conversation(new_user=True)
-        self.original_prompt = self.conversations[self.username]['default_prompt'].copy()
-        self.tam_default_len = len(self.original_prompt)
+        self.tam_default_len = db.getDefaultLength()
         self.respon = ""
         self.result = []
+        self.current_prompt = ""
+        self.conversations_prepared = {}
+    
+    #borrar conversaciones
+    def clearChats(self):
+        db.clearChats(self.username)
+        self.conversations={}
 
-        self.tokens_used = 0
-
-        self.current_prompt = "default_prompt"
-        self.conversations_prepared={}
-
-    def clearChat(self):
-        self.conversations = {key: value for key, value in self.conversations.items() if key == 'default_prompt'}
-        self.conversations['default_prompt']=self.original_prompt.copy()
-
-    def give_feedback(self,feedback:dict):
-        feedback_present=False
-        for message in self.conversations[self.username][feedback["prompt"]]:
-            if message['author']=='bot':
+    
+    #dar feedback sobre una query
+    def give_feedback(self, feedback: dict):
+        for message in self.conversations[feedback["prompt"]]:
+            if message['author'] == 'bot':
                 if 'uuid' in message:
-                    if message["uuid"]==feedback['uuid']:
-                        message["feedback"]=feedback['feedback']
-                        with open("feedback.json","r") as f:
-                            feedbacks_json=json.load(f)
-                        for x in range(len(feedbacks_json)):
-                            if feedbacks_json[x]['uuid']==feedback['uuid']:
-                                feedbacks_json[x]['feedback']=feedback['feedback']
-                                feedback_present=True
-                        if not feedback_present:
-                            feedbacks_json.append(message)
-                        with open("feedback.json","w") as f:
-                            json.dump(feedbacks_json,f)
+                    if message["uuid"] == feedback['uuid']:
+                        message["feedback"] = feedback['feedback']
+                        db.give_feedback(feedback.get('prompt'),feedback.get('uuid'),feedback.get('feedback'))
+                        print('encontrado msg')
         print('busqueda completa')
-
-
-    def include_in_conversation(self,include=None,gen_uuid="", prompt='default_prompt', role='user', save=False, new_user=False):
-        prepared = {"author": "user", "content": f"{include}","uuid":gen_uuid} if role == 'user' else {
+    
+    #guardar mensaje en conversacion o guardar conversacion
+    def include_in_conversation(self, include=None, gen_uuid="",prev_uuid="", prompt='default_prompt', role='user',feedback=""):
+        prepared = {"author": "user", "content": f"{include}", "uuid": gen_uuid} if role == 'user' else {
             "content": f"{include}",
             "author": "bot",
             "citationMetadata": {"citations": []},
             "feedback": "",
-            "uuid":gen_uuid}
+            "uuid": gen_uuid,
+            "prev_uuid":prev_uuid}
 
-        if new_user:
-            with open('conversations_vertex.json', 'w') as f:
-                    json.dump(self.conversations, f)
-        else:
-            if not save:
-                if prompt not in self.conversations[self.username]:
-                    self.conversations[self.username][prompt] = self.original_prompt.copy()
-                self.conversations[self.username][prompt].append(prepared)
-            
-            if prompt != 'default_prompt' and save:
-                with open('conversations_vertex.json', 'r')as f:
-                    current_convers = json.load(f)
-                if prompt not in self.conversations[self.username]:
-                    current_convers[self.username][prompt] = self.conversations[self.username]['default_prompt'].copy()
-                    self.conversations[self.username][prompt] = self.conversations[self.username]['default_prompt'].copy()
-
-                else:
-                    current_convers[self.username][prompt]=self.conversations[self.username][prompt].copy()
-                    
-
-                current_convers[self.username]['default_prompt'] = self.original_prompt.copy()
-                self.conversations[self.username]['default_prompt'] = self.original_prompt.copy()
-                
-                
-                with open('conversations_vertex.json', 'w') as f:
-                    json.dump(current_convers, f)
-
+        if prompt != 'default_prompt':
+            self.conversations[prompt].append(prepared)
+            db.agregarMensaje(gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
+    
+    #reducir tokens de conversacion
     def reduce_tokens(self):
 
         del self.conversations[self.current_prompt][self.tam_default_len]
         del self.conversations[self.current_prompt][self.tam_default_len]
-
+    
+    #encontrar query
     def find_start(self, string_principal):
 
         indice1 = string_principal.lower().find('select')
@@ -125,7 +99,8 @@ class Chat():
             return indice1  # Si solo se encuentra el primer string
 
         return min(indice1, indice2)
-
+    
+    #comprobar si hay una query en la respuesta de la ia y si es asi devolverla
     def select_sintax(self, respon):
         if respon.lower().find('i am trained to understand and respond') != -1:
             return respon, True
@@ -147,12 +122,13 @@ class Chat():
         select.replace("```", "")
 
         return select, False
-
+    
+    #ejecucion de query
     def execute(self, query):
-        print('query=',query)
+        print('query=', query)
         # print('execting...')
         query_job = client.query(query)
-        #print("\033[2J\033[H", 'executing...')
+        # print("\033[2J\033[H", 'executing...')
         rows = []
         columns = []
         for row in query_job.result(timeout=5):
@@ -162,17 +138,19 @@ class Chat():
             columns.clear()
         self.result = rows
         return rows
-
+    
+    #generaciond e query
     def gpt_select(self, prompt):
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
         response = asyncio.run(vertex_petition(prompt))
         # if response['usage']['total_tokens']>3300:
         # self.reduce_tokens()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
-        #print(response)
+        # print(response)
 
         return response
-
+    
+    #intentar resolver error
     def try_error(self, prompt, select, e):
         valid = False
         total = 3
@@ -186,7 +164,7 @@ class Chat():
                     "citations": []
                 }
             }
-            #print("***************************************")
+            # print("***************************************")
             prepared_user = {
                 "author": 'user',
                 "content": f"La query a dado el siguiente error: {e}. \n intenta hacer la query solucionando el error"
@@ -204,7 +182,7 @@ class Chat():
             try:
                 if no_select:
 
-                    #print(response)
+                    # print(response)
                     return response
                 else:
                     self.execute(select)
@@ -217,8 +195,9 @@ class Chat():
             if valid:
                 break
 
-        return response,no_select
-
+        return response, no_select
+    
+    #ejecutar la peticion del mensaje: obtener query y ejecutarla en caso de ser ejecutable
     def make_petition(self, prompt):
         repeat = 0
         while True:
@@ -233,10 +212,11 @@ class Chat():
                 select, no_select = self.select_sintax(response)
                 if no_select:
 
-                    return response,no_select
+                    return response, no_select
 
                 self.execute(select)
-                self.conversations_prepared=self.conversations.copy()[self.username][self.current_prompt][-1]['result']=self.result.copy()
+                self.conversations_prepared = self.conversations.copy(
+                )[self.current_prompt][-1]['result'] = self.result.copy()
                 # for key in result:
                 # print(str(key))
                 # print(select)
@@ -248,13 +228,13 @@ class Chat():
                     repeat += 1
                     preview_prompt = self.current_prompt
                     self.current_prompt = 'try_error'
-                    select,no_select = self.try_error(prompt, select, e)
+                    select, no_select = self.try_error(prompt, select, e)
                     self.current_prompt = preview_prompt
 
                     self.conversations.pop('try_error')
-                    return select,no_select
+                    return select, no_select
                 else:
-                    #print("imposible hacer la select")
+                    # print("imposible hacer la select")
                     break
 
         '''
@@ -262,8 +242,9 @@ class Chat():
             json.dump(result, f)
         '''
 
-        return response,no_select
-
+        return response, no_select
+    
+    #comprobar si cumple ciertos requisitos el mensaje
     def valid(self, user_input):
         commands = ['/new_chat', '/exit', '/save', '/use']
         if user_input != '':
@@ -279,61 +260,57 @@ class Chat():
                     elif '/use' in user_input and len(user_input.split()) > 1:
                         return False
                     else:
-                            print()
-                        #print(f'Comando {user_input} no valido\n Comandos validos:\n\t /new_chat,\n\t /exit,\n\t /save <nombre a guardar>,\n\t /use <nombre a guardar>')
+                        print()
+                        # print(f'Comando {user_input} no valido\n Comandos validos:\n\t /new_chat,\n\t /exit,\n\t /save <nombre a guardar>,\n\t /use <nombre a guardar>')
             return True
         else:
             return False
-
-    def newChat(self, msg,gen_uuid, prompt='default_prompt'):
-        self.current_prompt = prompt
-
-        self.include_in_conversation(include=msg, gen_uuid=gen_uuid, prompt=prompt)
-        query,no_select = self.make_petition(self.conversations[self.username][prompt])
-        respon_uuid=str(uuid.uuid4())
-        self.include_in_conversation(query,gen_uuid=respon_uuid, prompt=prompt, role='assistant')
+    
+    #funcion para chatear
+    def newChat(self, msg, gen_uuid, prompt='default_prompt'):
+        prev_uuid=""
+        for message in self.conversations.get(prompt):
+            prev_uuid=message.get("uuid")
+        self.include_in_conversation(
+            include=msg, gen_uuid=gen_uuid,prev_uuid=prev_uuid, prompt=prompt)
+        query, no_select = self.make_petition(
+            self.conversations[prompt])
+        respon_uuid = str(uuid.uuid4())
+        self.include_in_conversation(
+            query, gen_uuid=respon_uuid,prev_uuid=gen_uuid, prompt=prompt, role='bot')
 
         '''for res in self.result:
             print(res)'''
-        
-        #print('Respuesta: ', self.respon)
+
+        # print('Respuesta: ', self.respon)
         # print('tokens usados', self.tokens_used)
         # print('coste de uso', self.tokens_used/1000*0.002, '$')
-        #print('prompt: ', self.current_prompt)
+        # print('prompt: ', self.current_prompt)
 
-        return query,no_select,respon_uuid
-
-    def chat(self,gen_uuid="", msg='/new_chat'):
+        return query, no_select, respon_uuid
+    
+    #llamar a funcion para chatear
+    def chat(self, gen_uuid="", msg='/new_chat'):
         # try:
         self.result.clear()
-        if msg == '':
-            chat = '/new_chat'
-        elif msg == '/new_chat':
-            chat="new chat"
-            self.current_prompt='default_prompt'
-            no_select=True
-            respon_uuid=""
-        elif '/save' in msg:
-            prompt = msg.split()[1]
-            self.include_in_conversation(prompt=prompt, save=True)
-            self.current_prompt = prompt
-            print('saved...')
-            chat = 'saved'
-            no_select=True
-            respon_uuid=""
-        elif '/load' in msg:
-            prompt = msg.split()[1]
-            self.current_prompt = prompt
-            chat = 'loaded'
-            no_select=True
-            respon_uuid=None
-        else:
-            chat,no_select,respon_uuid = self.newChat(msg, gen_uuid,prompt=self.current_prompt)
+        chat, no_select, respon_uuid = self.newChat(
+            msg, gen_uuid, prompt=self.current_prompt)
         '''except Exception as e:
             print(e)
             self.conversations['default_prompt']=self.original_prompt
             self.include_in_conversation(conversations)'''
-        return chat,no_select,respon_uuid
+        return chat, no_select, respon_uuid
+    
+    #crear conversacion y agregarle el default_prompt
+    def createConversation(self, prompt):
+        db.createPromptConversation(self.username, prompt)
+        self.get_conversations()
+        print("echo")
+
+    
+    #obtener nombres de las conversaciones
+    def getConversationsName(self):
+        return list(self.conversations.keys())
 
 
 '''def main(cant):
@@ -350,144 +327,176 @@ class Chat():
         tarea.start()
     for tarea in tareas:
         tarea.join()'''
-       # tarea.start()
-    # for tarea in tareas:
-       # tarea.join()
+# tarea.start()
+# for tarea in tareas:
+# tarea.join()
 
-    # SELECT * FROM `hallmark-hallmark-pro.hallmark_hallmark_dwh.fact_registereduser` WHERE daydate  =DATE "2022-05-11" and userid='bc6f6da1-0b90-48ab-85f8-b01bb4097901'
-    # type tiene dods valores posibles subscription y registration  de la tabla fact_registereduser
-    # status puede tener PayingSubscription TrialSubscription para los subscription
-    # register y playback
-    # para registered user la columna subscriptionperiod muestra el tipo de subscripcion y activationdaydate para cuando se dio de alta
+# SELECT * FROM `hallmark-hallmark-pro.hallmark_hallmark_dwh.fact_registereduser` WHERE daydate  =DATE "2022-05-11" and userid='bc6f6da1-0b90-48ab-85f8-b01bb4097901'
+# type tiene dods valores posibles subscription y registration  de la tabla fact_registereduser
+# status puede tener PayingSubscription TrialSubscription para los subscription
+# register y playback
+# para registered user la columna subscriptionperiod muestra el tipo de subscripcion y activationdaydate para cuando se dio de alta
 chats = {}
+
+# generar un id
+
 
 @app.route("/generate_uuid", methods=['GET'])
 def generate_uuid():
-    uuid_generated=str(uuid.uuid4())
+    uuid_generated = str(uuid.uuid4())
 
-    return jsonify({"uuid":uuid_generated})
+    return jsonify({"uuid": uuid_generated})
+
+# obtener mensajes de una conversacion
+
+
 @app.route("/get_conversation_of_prompt", methods=['POST'])
 def get_conversation_of_prompt():
-    
-
+    print("getting conversation messages")
     if 'username' not in session:
-        #print(session.get("username"))
         return redirect(url_for('login'))
-    username=session.get('username')
+    username = session.get('username')
     if username not in chats:
-        chats[username]=Chat(username)
-    chat:Chat=chats[username]
+        chats[username] = Chat(username)
+    chat: Chat = chats[username]
     prompt = request.get_json()["name"]
-    conversation = chat.conversations.get(username).get(prompt)
-
-    chat.current_prompt=prompt
+    if prompt not in chat.conversations:
+        chat.createConversation(prompt)
+    conversation = chat.conversations.get(prompt)
+    chat.current_prompt = prompt
     messages = []
+    print(conversation[chat.tam_default_len:])
     for item in conversation[chat.tam_default_len:]:
         msg = {
             "author": item["author"],
             "content": item["content"],
-            "uuid":item["uuid"]
+            "uuid": item["uuid"]
         }
 
         if item["author"] == "bot":
             msg["feedback"] = item["feedback"]
-        
+
         messages.append(msg)
-    print("prompt=",prompt)
+    print("prompt=", prompt)
     return jsonify(messages)
+
+# crear conversacion de un usuario
+
 
 @app.route("/save-prompt", methods=['POST'])
 def save_prompt():
+    print("savving conversation messages")
     if 'username' not in session:
         return redirect(url_for('index'))
-    username=session.get('username')
-    chat=chats[username]
+    username = session.get('username')
+    chat: Chat = chats[username]
     prompt = request.get_json()["name"]
-    chat.chat(msg="/save " + prompt)
+    chat.createConversation(prompt)
     return jsonify({'reply': "saved"})
+
+# obtener todas los nombres de las conversaciones de un usuario
+
 
 @app.route('/get_prompts', methods=['GET'])
 def get_prompts():
+    print("getting conversations names")
+
     print(session.get('username'))
     if 'username' not in session:
-        #print(session.get('username'))
+        # print(session.get('username'))
         return redirect(url_for('login'))
-    username=session.get('username')
+    username = session.get('username')
     if username not in chats:
-        chats[username]=Chat(username)
-    chat=chats[username]
-    prompts = list(chat.conversations[username].keys())
-    print(prompts)
+        chats[username] = Chat(username)
+    chat: Chat = chats[username]
+    prompts = chat.getConversationsName()
     return jsonify(prompts)
+
+# dar feedback sobre una query
+
+
 @app.route('/give_feedback', methods=['POST'])
 def give_feedback():
     data = request.json
     # Acceder a los datos enviados en la solicitud POST
-    
+
     if 'username' not in session:
-        #print(session.get('username'))
+        # print(session.get('username'))
         return redirect(url_for('login'))
-    username=session.get('username')
+    username = session.get('username')
     if username not in chats:
-        chats[username]=Chat(username)
-    chat=chats[username]
-    feedback_complete={
-    "prompt" : data['prompt'],
-    "uuid" : data['uuid'],
-    "feedback" :data["feedback"]
+        chats[username] = Chat(username)
+    chat = chats[username]
+    feedback_complete = {
+        "prompt": data['prompt'],
+        "uuid": data['uuid'],
+        "feedback": data["feedback"]
     }
     print(feedback_complete)
     chat.give_feedback(feedback_complete)
     return 'Solicitud POST exitosa'
 
-'''@app.route('/clear_chats', methods=['GET'])
+
+@app.route('/clear_chats', methods=['GET'])
 def clear_chats():
     if 'username' not in session:
         print(session)
         return redirect(url_for('index'))
     username=session.get('username')
     chat=chats[username]
-    chat.clearChat()
-    return '', 200'''
+    chat.clearChats()
+    return '', 200
+
+# enviar un mensaje
+
 
 @app.route('/send_message', methods=['POST'])
 def sendmessage():
     if 'username' not in session:
         return redirect(url_for('index'))
-    username=session.get('username')
-    chat=chats[username]
+    username = session.get('username')
+    chat = chats[username]
     requestt = request.get_json()
     ex_request = requestt['text']
     gen_uuid = requestt['uuid']
     print(type(gen_uuid))
-    petition, no_select,gen_uuid = chat.chat(gen_uuid,ex_request)
+    petition, no_select, gen_uuid = chat.chat(gen_uuid, ex_request)
     if not no_select:
-        return jsonify({'reply': petition, 'result': chat.result,'uuid':gen_uuid})
-    return jsonify({'reply': petition,'uuid':gen_uuid})
-@app.route('/loginpage', methods=['POST'])
+        return jsonify({'reply': petition, 'result': chat.result, 'uuid': gen_uuid})
+    return jsonify({'reply': petition, 'uuid': gen_uuid})
 
-@app.route('/login', methods=['POST','GET'])
+# iniciar sesion de usuario o crearlo en caso de no existir
+
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
-        request_json=request.get_json()
+        request_json = request.get_json()
         username = request_json.get('username')
-        if username:
-            chats[username]= Chat(username)
+        if 'username' not in session and username:
+            chats[username] = Chat(username)
         session['username'] = username
         print(session.get('username'))
         return redirect(url_for('chat_web'))
     else:
-         return render_template('auth/login.html')
-@app.route('/chat') 
+        return render_template('auth/login.html')
+
+# cargar html del chat
+
+
+@app.route('/chat')
 def chat_web():
     if 'username' in session:
         return render_template('web.html')
     else:
         return redirect(url_for('login'))
+
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
 
 @app.route('/')
 def index():
@@ -495,6 +504,7 @@ def index():
         return redirect(url_for('chat_web'))
     else:
         return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
