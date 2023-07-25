@@ -10,9 +10,9 @@ with open('conversations_vertex.json','r') as f:
 
 
 
-connection = mysql.connector.connect(host="35.221.60.82",
+connection = mysql.connector.connect(host="localhost",
     user="root",
-    password="BuxIesG9>PKIgB7]",
+    password="peterpan",
     database="conversations_chat")
     
 
