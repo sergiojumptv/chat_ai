@@ -160,6 +160,7 @@ celdas.forEach(celda => {
     }else if (!waiting){
       sendMessage();
       console.log("sending")
+      waiting=false
     }
 
   }
@@ -198,7 +199,13 @@ celdas.forEach(celda => {
       const name = prompt("Ingrese un nombre:");
       
       if (name) {
-        savePrompt(name);
+        savePrompt(name, function() {
+          get_conversation_of_prompt("Chat 1", function() {
+            seleccionarPrompt(name)
+            waiting=false
+          });
+          
+        });
       }
     });
     listOfPrompts.appendChild(button_new_prompt);
@@ -323,8 +330,12 @@ celdas.forEach(celda => {
         console.log("Nombre guardado exitosamente:", responseData);
         get_prompts()
         current_prompt=name
+        get_conversation_of_prompt(name)
+        waiting=false
         if (callback && typeof callback === 'function') {
+          
           callback();
+
         }
       })
       .catch(error => {
@@ -362,7 +373,7 @@ celdas.forEach(celda => {
           include_msg(item)
         });
         seleccionarPrompt(name)
-      
+        waiting=false
         if (callback && typeof callback === 'function') {
           callback();
         }
