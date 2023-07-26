@@ -689,9 +689,7 @@ class _ChatSessionBase:
                 }
                 for example in self._examples
             ]
-        print('message=',message)
-        print('examples=',prediction_instance['examples'][-1])
-        print('messages=',prediction_instance['messages'][-1])
+
         prediction_response = self._model._endpoint.predict(
             instances=[prediction_instance],
             parameters=prediction_parameters,

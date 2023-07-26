@@ -8,7 +8,11 @@ import asyncio
 import os
 import uuid
 import database_manage as db
+import logging
 
+logging.basicConfig(level=logging.INFO, filename='app.log')
+
+logger = logging.getLogger(__name__)
 
 # Open a cursor to perform database operations
 
@@ -460,6 +464,7 @@ def sendmessage():
     ex_request = requestt['text']
     gen_uuid = requestt['uuid']
     print(type(gen_uuid))
+    logging.info("user: ", username," sending message on prompt: ",chat.current_prompt)
     petition, no_select, gen_uuid = chat.chat(gen_uuid, ex_request)
     if not no_select:
         return jsonify({'reply': petition, 'result': chat.result, 'uuid': gen_uuid})
@@ -475,6 +480,7 @@ def login():
         username = request_json.get('username')
         if 'username' not in session and username:
             chats[username] = Chat(username)
+        logging.info("logged user: ", username)
         session['username'] = username
         print(session.get('username'))
         return redirect(url_for('chat_web'))
