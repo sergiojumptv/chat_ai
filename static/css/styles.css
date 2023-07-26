@@ -83,7 +83,7 @@ header {
 
 .chat{
   box-sizing: border-box;
-  background-color: #808080;
+  background-color: #343541;
   width: 100%;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -159,8 +159,8 @@ header {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  background-color: #494949;
-  border-radius: 10px;
+  background-color: #202123;
+
 }
 .like {
   align-self: center;
@@ -197,17 +197,87 @@ header {
 }
 
 .prompt {
-  padding: 10px 20px;
-  background-color: lightgreen;
+  padding: 5px 5px;
+  background-color: transparent;
   border: none;
   border-radius: 4px;
-  margin-bottom: 10px;
   cursor: pointer;
   font-size: 10px;
+  color: rgb(223, 222, 222);
   animation: fadeIn 1s ease forwards;
+  display: inline-flex;
+  align-items: center;
+}
+.prompt[button="save"]{
+  border:1px solid #4D4D4F;
+  margin-bottom: 5px;
+}
+.prompt[selected=True]{
+  background-color: #2A2B31;
+
+}
+.prompt[selected=False]{
+  background-color: transparent;
+
+}
+.prompt:hover {
+  background-color: #2A2B31;
+  transition:0.5s; 
+}
+.prompt[button="save"]:hover {
+
+  transition:0.5s; 
 }
 
-.prompt:hover {
-  background-color: #45a049;
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input_text {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 0;
+  background-color: transparent;
+  color:  rgb(223, 222, 222);
+}
+
+.input_text::placeholder {
+  color: rgb(223, 222, 222);
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #2196F3;
+  transition: width 0.2s ease-in-out;
+}
+
+.input_text:focus + .underline {
+  width: 100%;
+}
+
+.input-button{
+  padding: 5px 5px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  color: rgb(223, 222, 222);
+  animation: fadeIn 1s ease forwards;
+  display: inline-flex;
+  align-items: center;
+  border:1px solid #4D4D4F;
+}
+.input-button:hover {
+  background-color: #2A2B31;
   transition:0.5s; 
 }

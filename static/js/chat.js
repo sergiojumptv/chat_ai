@@ -1,5 +1,5 @@
-let saved_prompts = [];
-
+var saved_prompts = [];
+var current_prompt=""
 document.addEventListener("DOMContentLoaded", function () {
   const chatMessages = document.getElementById("chat-messages");
   const messageInput = document.getElementById("message-input");
@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const mostrarTabla = document.getElementById("mostrarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://34.85.133.207:8000";
+  const apiUrl = "http://127.0.0.1:8000";
+  var waiting=false
   get_prompts()
   function crearTabla(data) {
   var tabla = document.createElement('table');
-  current_prompt=""
   // Crear el encabezado de la tabla
   var encabezado = tabla.createTHead();
   var filaEncabezado = encabezado.insertRow();
@@ -116,16 +116,53 @@ celdas.forEach(celda => {
           get_prompts()
         } else {
           console.log('Hubo un error al borrar las conversaciones');
+
         }
+        current_prompt=""
       })
       .catch(error => {
         console.log('Error de red:', error);
       })
   });
 
-  sendButton.addEventListener("click", function () {
-    sendMessage();
+  messageInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      send_pressed();
+    }
   });
+
+  sendButton.addEventListener("click", function () {
+    send_pressed()
+  });
+
+  function send_pressed(){
+    console.log(waiting)
+    if (current_prompt==""  && !waiting){
+      if (saved_prompts.length==0){
+      console.log("no prompts")
+      
+
+      savePrompt("Chat 1", function() {
+        get_conversation_of_prompt("Chat 1", function() {
+          seleccionarPrompt("Chat 1")
+          sendMessage()
+          waiting=false
+        });
+        
+      });}
+      else{
+        get_conversation_of_prompt(saved_prompts[0], function() {
+          console.log("cargando conver",saved_prompts[0])
+          sendMessage()
+          waiting=false
+        });
+      }
+    }else if (!waiting){
+      sendMessage();
+      console.log("sending")
+    }
+
+  }
 
 
 
@@ -137,30 +174,56 @@ celdas.forEach(celda => {
     tablaContainer.style.display = 'none';
   })
   function load_prompts() {
+    
     listOfPrompts.innerHTML = ""
-    const save_button=document.createElement("button");
-    save_button.id = "save-button"
-    save_button.textContent = "Guardar";
-    save_button.classList.add("prompt")
-    save_button.addEventListener("click", function () {
+    const button_new_prompt=document.createElement("button");
+      button_new_prompt.classList.add("prompt");
+      button_new_prompt.setAttribute("button","save");
+      button_new_prompt.id = "save-button";
+
+
+    const img_new_prompt=document.createElement("img");
+      img_new_prompt.src="/static/images/nuevo_prompt.png"
+      img_new_prompt.style.width = '20px'; 
+      img_new_prompt.style.height = '20px';
+
+    const text_new_prompt=document.createElement("span");
+      text_new_prompt.textContent = "Nuevo Chat";
+      text_new_prompt.style.marginLeft='5px';
+    
+    button_new_prompt.appendChild(img_new_prompt);
+    button_new_prompt.appendChild(text_new_prompt);
+    button_new_prompt.addEventListener("click", function () {
+
       const name = prompt("Ingrese un nombre:");
-  
+      
       if (name) {
         savePrompt(name);
       }
     });
-    listOfPrompts.appendChild(save_button);
+    listOfPrompts.appendChild(button_new_prompt);
     saved_prompts.forEach(item => {
 
       console.log("Nombre guardado:", item);
       const prompt = document.createElement("button");
-      prompt.id = "prompt"
-      prompt.textContent = item;
-      prompt.classList.add("prompt")
+      prompt.id = "prompt";
 
+
+      const img_msg=document.createElement("img");
+        img_msg.src="/static/images/mensaje.png"
+        img_msg.style.width = '20px'; 
+        img_msg.style.height = '20px';
+
+      const text_prompt=document.createElement("span");
+        text_prompt.textContent = item;
+        text_prompt.style.marginLeft='5px';
+      
+      prompt.classList.add("prompt");
+      prompt.appendChild(img_msg);
+      prompt.appendChild(text_prompt);
       prompt.addEventListener("click", function () {
-        get_conversation_of_prompt(prompt.textContent)
-        console.log(prompt.textContent)
+        get_conversation_of_prompt(prompt.textContent);
+        console.log(prompt.textContent);
       });
       
       listOfPrompts.appendChild(prompt);
@@ -168,11 +231,13 @@ celdas.forEach(celda => {
 
 
     });
+
   }
 
   function sendMessage() {
     const message = messageInput.value.trim();
-
+    if (message=="") console.log("mensaje vacio")
+    else{
     fetch(apiUrl+'/generate_uuid', {
       method: 'GET',
       headers: {
@@ -183,7 +248,7 @@ celdas.forEach(celda => {
       .then(data => {
         
         uuid_gen=data.uuid
-        if (message !== "") {
+
           const messageUser = {
             author: "user",
             content: message,
@@ -191,7 +256,7 @@ celdas.forEach(celda => {
             
           }
           include_msg(messageUser)
-        }
+
               
 
        // URL de la API
@@ -230,12 +295,12 @@ celdas.forEach(celda => {
       .catch(error => {
         console.error('Error al obtener el UUID:', error);
       });
-    
+  }
   }
 
-  function savePrompt(name) {
+  function savePrompt(name, callback) {
  // URL de la API para guardar el nombre
-    
+    waiting=true
     const data = {
       name: name
     };
@@ -257,12 +322,17 @@ celdas.forEach(celda => {
         include_msg(responseData.reply)
         console.log("Nombre guardado exitosamente:", responseData);
         get_prompts()
+        current_prompt=name
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       })
       .catch(error => {
         console.error("Error:", error);
       });
+
   }
-  function get_conversation_of_prompt(name) {
+  function get_conversation_of_prompt(name,callback) {
     current_prompt=name
 
 
@@ -291,10 +361,16 @@ celdas.forEach(celda => {
           console.log(item)
           include_msg(item)
         });
+        seleccionarPrompt(name)
+      
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       })
       .catch(error => {
         console.error("Error:", error);
       });
+
   }
 
   function select_like(likeButton,dislikeButton,select){
@@ -436,5 +512,22 @@ celdas.forEach(celda => {
     chatMessages.appendChild(replyElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
-  
+  function seleccionarPrompt(name) {
+    // Obtener todos los divs con la clase "inner-div"
+    var divs = document.querySelectorAll(".prompt");
+
+    // Recorrer todos los divs y quitar la clase "selected" para eliminar el borde negro
+    divs.forEach(function(item) {
+      console.log(item.children[1].textContent, ' ', name)
+        if (item.children[1].textContent == name)
+          item.setAttribute("selected","True");
+        else
+          item.setAttribute("selected","False");
+        
+    });
+
+    // Aplicar la clase "selected" solo al div que fue clickeado
+
+}
 });
+
