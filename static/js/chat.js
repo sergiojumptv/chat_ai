@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const listOfPrompts = document.getElementById("chat_prompts")
   const saveButton = document.getElementById("save-button");
   const clearChats = document.getElementById("clear-chats")
-  const mostrarTabla = document.getElementById("mostrarTabla")
+  const ocultarTabla = document.getElementById("ocultarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
   const apiUrl = "http://34.85.133.207:8000";
@@ -167,8 +167,8 @@ celdas.forEach(celda => {
 
 
 
-  mostrarTabla.addEventListener("click", function () {
-    tablaContainer.style.display = 'block';
+  ocultarTabla.addEventListener("click", function () {
+    tablaContainer.style.display = 'none';
 
   })
   salirTabla.addEventListener("click", function () {
