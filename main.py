@@ -9,7 +9,7 @@ import os
 import uuid
 import database_manage as db
 import logging
-
+import transform_results
 logging.basicConfig(level=logging.INFO, filename='app.log')
 
 logger = logging.getLogger(__name__)
@@ -134,12 +134,11 @@ class Chat():
         query_job = client.query(query)
         # print("\033[2J\033[H", 'executing...')
         rows = []
-        columns = []
-        for row in query_job.result(timeout=5):
-            for x in row:
-                columns.append(x)
-            rows.append(columns.copy())
-            columns.clear()
+        for row in query_job.result():
+            row_dict = {}
+            for field_name, value in row.items():
+                row_dict[field_name] = value
+            rows.append(row_dict)
         self.result = rows
         return rows
     
@@ -215,7 +214,7 @@ class Chat():
 
                 select, no_select = self.select_sintax(response)
                 if no_select:
-
+                    logging.info(response)
                     return response, no_select
 
                 self.execute(select)
@@ -234,7 +233,7 @@ class Chat():
                     self.current_prompt = 'try_error'
                     select, no_select = self.try_error(prompt, select, e)
                     self.current_prompt = preview_prompt
-
+                    logging.info(self.result)
                     self.conversations.pop('try_error')
                     return select, no_select
                 else:
@@ -245,7 +244,8 @@ class Chat():
         with open('querys_gpt.json', 'w') as f:
             json.dump(result, f)
         '''
-
+        logging.info(f"response= {response}, result {self.result}")
+        query=transform_results.transform({'question': msg,'result':self.result})
         return response, no_select
     
     #comprobar si cumple ciertos requisitos el mensaje
@@ -290,7 +290,6 @@ class Chat():
         # print('tokens usados', self.tokens_used)
         # print('coste de uso', self.tokens_used/1000*0.002, '$')
         # print('prompt: ', self.current_prompt)
-
         return query, no_select, respon_uuid
     
     #llamar a funcion para chatear

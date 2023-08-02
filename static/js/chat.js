@@ -421,7 +421,9 @@ celdas.forEach(celda => {
   }
   function include_msg(msg) {
     const replyElement = document.createElement("div");
-    replyElement.textContent = msg["content"];
+    const replyElement_text = document.createElement("p");
+    replyElement_text.innerHTML = msg["content"];
+    replyElement.appendChild(replyElement_text);
     replyElement.classList.add("message");
     uuid_gen=msg["uuid"]
     replyElement.id = uuid_gen
@@ -481,7 +483,8 @@ celdas.forEach(celda => {
       });
   
       replyElement.addEventListener("mouseover", function() {
-        console.log("over")
+        msg["content"]= msg["content"].replace(/&lt;br&gt;/g, "<br>");
+	console.log("over")
         if (dislikeButton.style.opacity==1){
           likeButton.style.width="19px"
           dislikeButton.style.width="21px"

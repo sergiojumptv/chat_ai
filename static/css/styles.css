@@ -136,7 +136,10 @@ header {
   height: auto;
   overflow-wrap:anywhere;
 }
-
+.message p{
+  padding:0;
+  margin:0;
+}
 .message[author="user"]{
   align-self: flex-end;
   background-color: lightgreen;

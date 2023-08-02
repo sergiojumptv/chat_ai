@@ -28,14 +28,14 @@ def petition(context,messages,examples,message):
 async def vertex_petition(prompt:list):
     examples=[]
     messages=[]
-    for message in prompt[15:]:
+    for message in prompt[21:]:
         if message["author"]=='user':
             input_text=message["content"]
         elif message["author"]=='bot':
             output_text=message["content"]
             inout=(input_text,output_text)
             messages.append(inout)
-    for message in prompt[:15]:
+    for message in prompt[:21]:
         if message["author"]=='user':
 
             input_text=message["content"]
