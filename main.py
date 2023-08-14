@@ -10,6 +10,7 @@ import uuid
 import database_manage as db
 import logging
 import transform_results
+import results_manage
 logging.basicConfig(level=logging.INFO, filename='app.log')
 
 logger = logging.getLogger(__name__)
@@ -55,7 +56,6 @@ class Chat():
     def clearChats(self):
         db.clearChats(self.username)
         self.conversations={}
-
     
     #dar feedback sobre una query
     def give_feedback(self, feedback: dict):
@@ -68,15 +68,17 @@ class Chat():
                         print('encontrado msg')
         print('busqueda completa')
     
+    
     #guardar mensaje en conversacion o guardar conversacion
-    def include_in_conversation(self, include=None,result_text=None,uuid_user=None, prompt='default_prompt', role='user',feedback=""):
+    def include_in_conversation(self, include=None,result_text=None,uuid_user=None,results=None, prompt='default_prompt', role='user',feedback=""):
         prev_uuid=""
         for message in self.conversations.get(prompt):
             prev_uuid=message.get("uuid")
         gen_uuid = str(uuid.uuid4())
         prev_uuid_text=""
-        for message in self.conversations_text.get(prompt):
-            prev_uuid_text=message.get("uuid")
+        if (conversations_text := self.conversations_text.get(prompt)) is not None:
+            for message in conversations_text:
+                prev_uuid_text = message.get("uuid")
         gen_uuid_text = str(uuid.uuid4())
         prepared = {"author": "user", "content": f"{include}", "uuid": gen_uuid,"prev_uuid":prev_uuid} if role == 'user' else {
             "content": f"{include}",
@@ -94,19 +96,22 @@ class Chat():
             "prev_uuid":prev_uuid_text}
         
 
+        
+
         if prompt != 'default_prompt':
             self.conversations[prompt].append(prepared)
             self.conversations_text[prompt].append(prepared_text)
-            db.agregarMensaje(uuid_user if role=="user" else gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
+            db.agregarMensaje(gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
             db.agregarMensaje(uuid_user if role=="user" else gen_uuid_text,prev_uuid_text,result_text if result_text else include,role,feedback,self.username,prompt,
-                              msg_type='text')
+                              msg_type='text',origin=gen_uuid)
+            if result_text and results:
+                results_manage.agregarResultados(gen_uuid_text,results)
+        return gen_uuid_text
 
     #reducir tokens de conversacion
     def reduce_tokens(self):
 
         del self.conversations[self.current_prompt][self.tam_default_len]
-        del self.conversations[self.current_prompt][self.tam_default_len]
-    
     #encontrar query
     def find_start(self, string_principal):
 
@@ -292,14 +297,17 @@ class Chat():
     
     #funcion para chatear
     def newChat(self, msg, gen_uuid, prompt='default_prompt'):
-        
+        transformed_result=None
         self.include_in_conversation(
             include=msg,uuid_user=gen_uuid, prompt=prompt)
         query, no_select = self.make_petition(
             self.conversations[prompt])
         if not no_select:
-            transform_results.transform(self.result,msg,self.conversations_text)
-        self.include_in_conversation(
+            transformed_result=transform_results.transform(self.result,msg,self.conversations_text.get(prompt))
+            respon_uuid=self.include_in_conversation(
+            query,result_text=transformed_result,results=self.result, prompt=prompt, role='bot')
+        else:
+            respon_uuid=self.include_in_conversation(
             query, prompt=prompt, role='bot')
 
         '''for res in self.result:
@@ -309,7 +317,8 @@ class Chat():
         # print('tokens usados', self.tokens_used)
         # print('coste de uso', self.tokens_used/1000*0.002, '$')
         # print('prompt: ', self.current_prompt)
-        return query, no_select, respon_uuid
+        respon=transformed_result if transformed_result else query
+        return respon, no_select, respon_uuid
     
     #llamar a funcion para chatear
     def chat(self, gen_uuid="", msg='/new_chat'):
@@ -374,7 +383,7 @@ def generate_uuid():
 
 @app.route("/get_conversation_of_prompt", methods=['POST'])
 def get_conversation_of_prompt():
-    print("getting conversation messages")
+    
     if 'username' not in session:
         return redirect(url_for('login'))
     username = session.get('username')
@@ -382,13 +391,15 @@ def get_conversation_of_prompt():
         chats[username] = Chat(username)
     chat: Chat = chats[username]
     prompt = request.get_json()["name"]
+    print("getting conversation messages",prompt)
     if prompt not in chat.conversations:
+        print("saving conversation messages",prompt)
         chat.createConversation(prompt)
-    conversation = chat.conversations.get(prompt)
+    conversation = chat.conversations_text.get(prompt)
     chat.current_prompt = prompt
     messages = []
     print(conversation[chat.tam_default_len:])
-    for item in conversation[chat.tam_default_len:]:
+    for item in conversation:
         msg = {
             "author": item["author"],
             "content": item["content"],
@@ -482,7 +493,8 @@ def sendmessage():
     ex_request = requestt['text']
     gen_uuid = requestt['uuid']
     print(type(gen_uuid))
-    logging.info("user: ", username," sending message on prompt: ",chat.current_prompt)
+    logging.info("user: "+ username+" sending message on prompt: "+chat.current_prompt)
+    print("user: "+ username+" sending message on prompt: "+chat.current_prompt)
     petition, no_select, gen_uuid = chat.chat(gen_uuid, ex_request)
     if not no_select:
         return jsonify({'reply': petition, 'result': chat.result, 'uuid': gen_uuid})

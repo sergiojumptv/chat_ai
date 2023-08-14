@@ -95,15 +95,16 @@ def getAllConversationsPromptsTexts(user_name):
     conversaciones={}
     for prompt in getAllConversationsNames(user_name):
         conversaciones[prompt]=getConversation(user_name,prompt,msg_type='text')
+    print(conversaciones)
     return conversaciones
 
 def getConversation(user_name,conversation_name,msg_type='sql'):
     try:
-        sql = "SELECT * FROM message WHERE user_name = %s and conversation_name = %s and msg_type = %s "
+        sql = "SELECT * FROM message WHERE user_name = %s and conversation_name = %s and msg_type = %s"
         cursor.execute(sql, (user_name,conversation_name,msg_type))
         unordered_messages=[]
         messages=[]
-        for uuid_, prev_uuid,content, author, feedback, otra,otra2,msg_type in cursor:
+        for uuid_, prev_uuid,content, author, feedback, otra,otra2,msg_type,otra3 in cursor:
             if author=='bot':
                 message={
                     'uuid':uuid_,
@@ -143,10 +144,10 @@ def getConversation(user_name,conversation_name,msg_type='sql'):
                 bloque_genesis=message
                 break
         if bloque_genesis is None:
-            return None
+            return []
         messages.append(bloque_genesis)
 
-        hash_anterior=messages[1]['uuid']
+        hash_anterior=messages[1 if msg_type=="sql" else 0]['uuid']
         while True:
 
             bloque_siguiente=None

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ocultarTabla = document.getElementById("ocultarTabla")
   const salirTabla = document.getElementById("salir-tabla")
   const tablaContainer = document.getElementById('tabla-container');
-  const apiUrl = "http://34.85.133.207:8000";
+  const apiUrl = "http://127.0.0.1:8000";
   var waiting=false
   get_prompts()
   function crearTabla(data) {
@@ -68,7 +68,7 @@ celdas.forEach(celda => {
       body: JSON.stringify(data)
     }).then(response => {
       if (response.ok) {
-        console.log('Solicitud POST exitosa');
+
       } else {
         throw new Error('Error en la respuesta del servidor');
       }
@@ -93,7 +93,7 @@ celdas.forEach(celda => {
       .then(data => {
 
         // El array de respuesta está almacenado en la variable 'data'
-        console.log(data)
+
         saved_prompts = data
         load_prompts()
       })
@@ -136,10 +136,10 @@ celdas.forEach(celda => {
   });
 
   function send_pressed(){
-    console.log(waiting)
+
     if (current_prompt==""  && !waiting){
       if (saved_prompts.length==0){
-      console.log("no prompts")
+        console.log("no conversations creating")
       
 
       savePrompt("Chat 1", function() {
@@ -152,14 +152,14 @@ celdas.forEach(celda => {
       });}
       else{
         get_conversation_of_prompt(saved_prompts[0], function() {
-          console.log("cargando conver",saved_prompts[0])
+
           sendMessage()
           waiting=false
         });
       }
     }else if (!waiting){
       sendMessage();
-      console.log("sending")
+
       waiting=false
     }
 
@@ -200,7 +200,7 @@ celdas.forEach(celda => {
       
       if (name) {
         savePrompt(name, function() {
-          get_conversation_of_prompt("Chat 1", function() {
+          get_conversation_of_prompt(name, function() {
             seleccionarPrompt(name)
             waiting=false
           });
@@ -211,7 +211,7 @@ celdas.forEach(celda => {
     listOfPrompts.appendChild(button_new_prompt);
     saved_prompts.forEach(item => {
 
-      console.log("Nombre guardado:", item);
+
       const prompt = document.createElement("button");
       prompt.id = "prompt";
 
@@ -230,7 +230,7 @@ celdas.forEach(celda => {
       prompt.appendChild(text_prompt);
       prompt.addEventListener("click", function () {
         get_conversation_of_prompt(prompt.textContent);
-        console.log(prompt.textContent);
+
       });
       
       listOfPrompts.appendChild(prompt);
@@ -287,7 +287,7 @@ celdas.forEach(celda => {
           throw new Error("Error en la respuesta de la API");
         })
         .then(responseData => {
-          console.log(responseData)
+
           if ('result' in responseData) {
             include_msg({ author: "bot", content: responseData.reply, result: responseData.result, uuid:responseData.uuid })}
           else { include_msg({author: "bot",content: responseData.reply,uuid:responseData.uuid})}
@@ -327,7 +327,7 @@ celdas.forEach(celda => {
       })
       .then(responseData => {
         include_msg(responseData.reply)
-        console.log("Nombre guardado exitosamente:", responseData);
+
         get_prompts()
         current_prompt=name
         get_conversation_of_prompt(name)
@@ -350,6 +350,7 @@ celdas.forEach(celda => {
     const data = {
       name: name
     };
+    console.log("getting conversation "+name)
 
     fetch(apiUrl+"/get_conversation_of_prompt", {
       method: "POST",
@@ -366,10 +367,10 @@ celdas.forEach(celda => {
         throw new Error("Error en la respuesta de la API");
       })
       .then(data => {
-        console.log("response -->",data)
+
         chatMessages.innerHTML = ""
         data.forEach(item => {
-          console.log(item)
+
           include_msg(item)
         });
         seleccionarPrompt(name)
@@ -426,6 +427,7 @@ celdas.forEach(celda => {
     replyElement.appendChild(replyElement_text);
     replyElement.classList.add("message");
     uuid_gen=msg["uuid"]
+    console.log(uuid_gen)
     replyElement.id = uuid_gen
 
     if (msg["author"] == "user") {
@@ -522,7 +524,7 @@ celdas.forEach(celda => {
 
     }
     
-    console.log("uuid= ",msg["uuid"])
+
     chatMessages.appendChild(replyElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
@@ -532,7 +534,7 @@ celdas.forEach(celda => {
 
     // Recorrer todos los divs y quitar la clase "selected" para eliminar el borde negro
     divs.forEach(function(item) {
-      console.log(item.children[1].textContent, ' ', name)
+
         if (item.children[1].textContent == name)
           item.setAttribute("selected","True");
         else

@@ -1,5 +1,6 @@
 from chat_vertex import InputOutputTextPair,petition
 import logging
+
 logging.basicConfig(level=logging.INFO, filename='app.log')
 
 logger = logging.getLogger(__name__)
@@ -22,5 +23,17 @@ Table= [{{
 def transform(table,question,prompt):
     message=f"""Question= {question}
 Table= {table}"""
-    logging.info(message)
+    prompt=create_prompt(prompt)
     return petition(system,prompt,examples,message)
+
+def create_prompt(prompt:list):
+    print("transforming")
+    messages=[]
+    for message in prompt:
+        if message["author"]=='user':
+            input_text=message["content"]
+        elif message["author"]=='bot':
+            output_text=message["content"]
+            inout=(input_text,output_text)
+            messages.append(inout)
+    return messages
