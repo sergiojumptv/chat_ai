@@ -1,4 +1,3 @@
-import chat_vertex
 from chat_vertex import InputOutputTextPair,petition
 import logging
 logging.basicConfig(level=logging.INFO, filename='app.log')
@@ -20,8 +19,8 @@ Table= [{{
   "duracion_minutos": "944448000",
   "ranking": "3"
 }}]""",output_text=f"""The ranking according to the total content duration for each title today, along with their durations in minutes, is as follows: <br>1. "Nature of Love" - Total Duration: 1705212000 minutes <br>2. "A Royal Runaway Romance" - Total Duration: 1506960000 minutes <br>3. "The Sweetest Heart" - Total Duration: 944448000 minutes""")
-def transform(msg):
-    message=f"""Question= {msg.get('question')}
-Table= {msg.get('result')}"""
+def transform(table,question,prompt):
+    message=f"""Question= {question}
+Table= {table}"""
     logging.info(message)
-    return petition(system,[],examples,message)
+    return petition(system,prompt,examples,message)

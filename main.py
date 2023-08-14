@@ -36,6 +36,7 @@ class Chat():
     #obtener todas las conversaciones de un usuario
     def get_conversations(self):
         self.conversations=db.getAllConversationsPrompts(self.username)
+        self.conversations_text=db.getAllConversationsPromptsTexts(self.username)
         return self.conversations
     
     #inicializacion de objeto chat
@@ -68,19 +69,38 @@ class Chat():
         print('busqueda completa')
     
     #guardar mensaje en conversacion o guardar conversacion
-    def include_in_conversation(self, include=None, gen_uuid="",prev_uuid="", prompt='default_prompt', role='user',feedback=""):
-        prepared = {"author": "user", "content": f"{include}", "uuid": gen_uuid} if role == 'user' else {
+    def include_in_conversation(self, include=None,result_text=None,uuid_user=None, prompt='default_prompt', role='user',feedback=""):
+        prev_uuid=""
+        for message in self.conversations.get(prompt):
+            prev_uuid=message.get("uuid")
+        gen_uuid = str(uuid.uuid4())
+        prev_uuid_text=""
+        for message in self.conversations_text.get(prompt):
+            prev_uuid_text=message.get("uuid")
+        gen_uuid_text = str(uuid.uuid4())
+        prepared = {"author": "user", "content": f"{include}", "uuid": gen_uuid,"prev_uuid":prev_uuid} if role == 'user' else {
             "content": f"{include}",
             "author": "bot",
             "citationMetadata": {"citations": []},
             "feedback": "",
             "uuid": gen_uuid,
             "prev_uuid":prev_uuid}
+        prepared_text = {"author": "user", "content": f"{result_text if result_text else include}", "uuid": uuid_user,"prev_uuid":prev_uuid_text} if role == 'user' else {
+            "content": f"{result_text if result_text else include}",
+            "author": "bot",
+            "citationMetadata": {"citations": []},
+            "feedback": "",
+            "uuid": gen_uuid_text,
+            "prev_uuid":prev_uuid_text}
+        
 
         if prompt != 'default_prompt':
             self.conversations[prompt].append(prepared)
-            db.agregarMensaje(gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
-    
+            self.conversations_text[prompt].append(prepared_text)
+            db.agregarMensaje(uuid_user if role=="user" else gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
+            db.agregarMensaje(uuid_user if role=="user" else gen_uuid_text,prev_uuid_text,result_text if result_text else include,role,feedback,self.username,prompt,
+                              msg_type='text')
+
     #reducir tokens de conversacion
     def reduce_tokens(self):
 
@@ -245,7 +265,7 @@ class Chat():
             json.dump(result, f)
         '''
         logging.info(f"response= {response}, result {self.result}")
-        query=transform_results.transform({'question': msg,'result':self.result})
+
         return response, no_select
     
     #comprobar si cumple ciertos requisitos el mensaje
@@ -272,16 +292,15 @@ class Chat():
     
     #funcion para chatear
     def newChat(self, msg, gen_uuid, prompt='default_prompt'):
-        prev_uuid=""
-        for message in self.conversations.get(prompt):
-            prev_uuid=message.get("uuid")
+        
         self.include_in_conversation(
-            include=msg, gen_uuid=gen_uuid,prev_uuid=prev_uuid, prompt=prompt)
+            include=msg,uuid_user=gen_uuid, prompt=prompt)
         query, no_select = self.make_petition(
             self.conversations[prompt])
-        respon_uuid = str(uuid.uuid4())
+        if not no_select:
+            transform_results.transform(self.result,msg,self.conversations_text)
         self.include_in_conversation(
-            query, gen_uuid=respon_uuid,prev_uuid=gen_uuid, prompt=prompt, role='bot')
+            query, prompt=prompt, role='bot')
 
         '''for res in self.result:
             print(res)'''

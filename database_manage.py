@@ -10,7 +10,7 @@ with open('conversations_vertex.json','r') as f:
 
 
 
-connection = mysql.connector.connect(host="localhost",
+connection = mysql.connector.connect(host="34.85.133.207",
     user="sergio_remote",
     password="peterpan",
     database="conversations_chat")
@@ -51,12 +51,11 @@ def agregarConversacion(conversation_name,user_name):
         # Capturar la excepción si la conversación ya existe
         print(f"Error: La conversación '{conversation_name}' ya existe.")
         connection.rollback()
-def agregarMensaje(message_uuid, prev_uuid, message_text, author, feedback, user_name,conversation_name):
+def agregarMensaje(message_uuid, prev_uuid, message_text, author, feedback, user_name,conversation_name,msg_type='sql',origin=None):
     try:
         # Añadir los dos mensajes relacionados con la conversación
-        sql_insert_message = "INSERT INTO message (uuid, prev_uuid, content, author, feedback, conversation_name, user_name) VALUES (%s,%s, %s, %s, %s,%s, %s)"
-        cursor.execute(sql_insert_message, (message_uuid,prev_uuid, message_text,author, feedback, conversation_name,user_name))
-        
+        sql_insert_message = "INSERT INTO message (uuid, prev_uuid, content, author, feedback, conversation_name, user_name, msg_type, origin) VALUES (%s,%s, %s, %s, %s,%s, %s, %s, %s)"
+        cursor.execute(sql_insert_message, (message_uuid,prev_uuid, message_text,author, feedback, conversation_name,user_name,msg_type,origin))
         connection.commit()
         print("Mensajes agregados exitosamente.")
     except mysql.connector.IntegrityError as e:
@@ -92,15 +91,19 @@ def getAllConversationsPrompts(user_name):
     for prompt in getAllConversationsNames(user_name):
         conversaciones[prompt]=getConversation(user_name,prompt)
     return conversaciones
+def getAllConversationsPromptsTexts(user_name):
+    conversaciones={}
+    for prompt in getAllConversationsNames(user_name):
+        conversaciones[prompt]=getConversation(user_name,prompt,msg_type='text')
+    return conversaciones
 
-
-def getConversation(user_name,conversation_name):
+def getConversation(user_name,conversation_name,msg_type='sql'):
     try:
-        sql = "SELECT * FROM message WHERE user_name = %s and conversation_name = %s "
-        cursor.execute(sql, (user_name,conversation_name))
+        sql = "SELECT * FROM message WHERE user_name = %s and conversation_name = %s and msg_type = %s "
+        cursor.execute(sql, (user_name,conversation_name,msg_type))
         unordered_messages=[]
         messages=[]
-        for uuid_, prev_uuid,content, author, feedback, otra,otra2 in cursor:
+        for uuid_, prev_uuid,content, author, feedback, otra,otra2,msg_type in cursor:
             if author=='bot':
                 message={
                     'uuid':uuid_,
@@ -225,8 +228,4 @@ def clearChats(username):
         return False
     
 if __name__ == '__main__':
-    conversation = data['default_user']['default_prompt']
-    for msg in conversation:
-        if 'citationMetadata' in msg:
-            msg.pop('citationMetadata')
-        agregarMensaje(msg['uuid'],msg['prev_uuid'],msg['content'],msg['author'],msg['feedback'],'default_user','default_prompt')
+    pass
