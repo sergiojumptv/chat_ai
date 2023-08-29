@@ -11,6 +11,7 @@ import database_manage as db
 import logging
 import transform_results
 import results_manage
+
 logging.basicConfig(level=logging.INFO, filename='app.log')
 
 logger = logging.getLogger(__name__)
@@ -30,7 +31,8 @@ client = bigquery.Client()
 vertex_credentials = '/root/.config/gcloud/application_default_credentials.json'
 bigquery_credentials = 'bigquery_credentials.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
-
+with open("config.json", "r") as f:
+    config_data=json.load(f)
 
 class Chat():
     
@@ -510,12 +512,12 @@ def login():
         username = request_json.get('username')
         if 'username' not in session and username:
             chats[username] = Chat(username)
-        logging.info("logged user: ", username)
+        logging.info("logged user: "+ username)
         session['username'] = username
         print(session.get('username'))
         return redirect(url_for('chat_web'))
     else:
-        return render_template('auth/login.html')
+        return render_template('auth/login.html', config_data=config_data)
 
 # cargar html del chat
 
@@ -523,7 +525,7 @@ def login():
 @app.route('/chat')
 def chat_web():
     if 'username' in session:
-        return render_template('web.html')
+        return render_template('web.html', config_data=config_data)
     else:
         return redirect(url_for('login'))
 

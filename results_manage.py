@@ -61,4 +61,3 @@ def getPrompt(prompt):
     # Cerrar la conexión
     client.close()
     return result
-getPrompt("pepe")
