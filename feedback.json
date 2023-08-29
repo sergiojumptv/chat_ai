@@ -1,1 +1,38 @@
-[{"content": "hello! how are you", "author": "bot", "citationMetadata": {"citations": []}, "feedback": "like", "uuid": "031e246f-8093-43c0-a752-af00073b8536"}, {"content": "hi! how can i help you today?", "author": "bot", "citationMetadata": {"citations": []}, "feedback": "like", "uuid": "bdbf6d6f-b56e-4e16-83c8-8c428272bed9"}, {"content": "hello! how are you", "author": "bot", "citationMetadata": {"citations": []}, "feedback": "", "uuid": "c303996a-920c-4331-ad1a-12bde980fb86"}, {"content": "I'm glad to hear that! How can I help you today?", "author": "bot", "citationMetadata": {"citations": []}, "feedback": "like", "uuid": "e979dfbb-64be-4585-a3c9-aaee53f40d1d"}, {"uuid": "b71bca24-f200-4d2a-8a15-64ff18a74e82", "prev_uuid": "2eb16a6b-2bdc-431a-aa88-4c06e0b2973e", "content": "hello! how are you", "author": "bot", "feedback": "like", "citationMetadata": {"citations": []}}]
+[
+    {
+        "content": "hello! how are you",
+        "author": "bot",
+        "citationMetadata": {
+            "citations": []
+        },
+        "feedback": "like",
+        "uuid": "031e246f-8093-43c0-a752-af00073b8536"
+    },
+    {
+        "content": "hi! how can i help you today?",
+        "author": "bot",
+        "citationMetadata": {
+            "citations": []
+        },
+        "feedback": "like",
+        "uuid": "bdbf6d6f-b56e-4e16-83c8-8c428272bed9"
+    },
+    {
+        "content": "hello! how are you",
+        "author": "bot",
+        "citationMetadata": {
+            "citations": []
+        },
+        "feedback": "dislike",
+        "uuid": "c303996a-920c-4331-ad1a-12bde980fb86"
+    },
+    {
+        "content": "I'm glad to hear that! How can I help you today?",
+        "author": "bot",
+        "citationMetadata": {
+            "citations": []
+        },
+        "feedback": "like",
+        "uuid": "e979dfbb-64be-4585-a3c9-aaee53f40d1d"
+    }
+]
