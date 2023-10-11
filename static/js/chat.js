@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     img_new_prompt.style.height = '20px';
 
     const text_new_prompt = document.createElement("span");
-    text_new_prompt.textContent = "Nuevo Chat";
+    text_new_prompt.textContent = "New Chat";
     text_new_prompt.style.marginLeft = '5px';
 
     button_new_prompt.appendChild(img_new_prompt);
