@@ -156,7 +156,6 @@ class Chat():
     
     #ejecucion de query
     def execute(self, query):
-        print('query=', query)
         # print('execting...')
         query_job = client.query(query)
         # print("\033[2J\033[H", 'executing...')
@@ -164,7 +163,7 @@ class Chat():
         for row in query_job.result():
             row_dict = {}
             for field_name, value in row.items():
-                row_dict[field_name] = value
+                row_dict[field_name] = str(value)
             rows.append(row_dict)
         self.result = rows
         return rows
@@ -173,6 +172,7 @@ class Chat():
     def gpt_select(self, prompt):
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
         response = asyncio.run(vertex_petition(prompt))
+        print(response)
         # if response['usage']['total_tokens']>3300:
         # self.reduce_tokens()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
@@ -507,6 +507,7 @@ def sendmessage():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    print("hola")
     if request.method == 'POST':
         request_json = request.get_json()
         username = request_json.get('username')

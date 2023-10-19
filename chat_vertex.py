@@ -17,7 +17,7 @@ def petition(context,messages,examples,message):
         history=messages,context=context,examples=examples
         )
 
-    response = chat.send_message(message)
+    response = chat.send_message(message,max_output_tokens=1000)
 
 
     return response.text
@@ -28,14 +28,14 @@ def petition(context,messages,examples,message):
 async def vertex_petition(prompt:list):
     examples=[]
     messages=[]
-    for message in prompt[21:]:
+    for message in prompt[23:]:
         if message["author"]=='user':
             input_text=message["content"]
         elif message["author"]=='bot':
             output_text=message["content"]
             inout=(input_text,output_text)
             messages.append(inout)
-    for message in prompt[:21]:
+    for message in prompt[:23]:
         if message["author"]=='user':
 
             input_text=message["content"]
@@ -45,6 +45,7 @@ async def vertex_petition(prompt:list):
             examples.append(inout)
     context=prompt[0]['content']
     message=prompt[-1]['content']
+    print("prompt==",messages)
     print('message= ',prompt[-1])
     print()
     return petition(context,messages,examples,message)

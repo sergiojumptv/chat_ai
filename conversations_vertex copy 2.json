@@ -1,0 +1,200 @@
+{
+    "default_user": {
+        "default_prompt": [
+            {
+                "author": "system",
+                "content": "Given an input request, respond using Standard SQL in a syntactically correct and valid manner. Diacritical marks (tildes) are not allowed in Standard SQL. Calculate the date using the function max(daydate). Be strict with the date; if it is specified, it is essential to include it. Be creative, but the SQL must be correct. If a ranking is requested, use the rank function and order by the ranking in descending order. Only use the tables named \n `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers`,\n `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`,\n `services-pro-368012.stg_services_us_kpi.kpi_content_ranking`.\nIn all queries you need to filter by brandid \"285df710-355f-11eb-9917-e71a95af48ce\".\nThe table `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` has columns: brandid (string), daydate (Date), country (String), dimension (String), status (String), total (INTEGER). The kpi_new_subscribers table contains the information of new subscribers, the column status can be \"TrialSubscription\" for the trial subscriptions or \"PayingSubscription\" for the paying subscriptiors,  the dimension column in the table distinguishes between the count of unique users \"subscribers\" and the total count of subscriptions (\"subscriptions\") for each day. This allows you to understand whether you are counting the number of individual users or the total number of subscriptions, considering that a user can have multiple subscriptions.\n\nThe table `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` has columns: brandid (string), daydate (Date), country (String), dimension (String), status (String), total (INTEGER).The kpi_total_subscriberss table contains the total of subscribers for each day, the column status can be \"TrialSubscription\" for the trial subscriptions or \"PayingSubscription\" for the paying subscriptiors. \n\nThe table `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` has columns: brandid (String), daydate (Date), country (String), contentname (String), contenttype (String), playback (String), contentduration (String), playbacktime (String). In the kpi_content_ranking table, the column contentname contains the name of the content, the column contenttype specify the type of content, it can be \"movie\" or \"SERIES\", the column playback contains the number of views, the column contentduration contains the total duration of the content, the column playbacktime contains the playback duration.\n\nIf asked to display columns that are in different tables, you must perform a join. If information about today's date is requested, the response should include data corresponding to the maximum available date in the table. Similarly, if information about yesterday's date is requested, the response should include data corresponding to the day before the maximum available date in the table. This can be achieved using max(daydate), for example. If a specific error is mentioned, you should repeat the last query while trying to correct the error. ",
+                "feedback": "",
+                "uuid": "",
+                "prev_uuid":""
+            },
+            {
+                "author": "user",
+                "content": "How many active subscriptions are there?",
+                "feedback": "SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions'",
+                "uuid": "c38a5698-339d-4dc3-920e-f709dcab7ed8",
+                "prev_uuid": ""
+            },
+            {
+                "content": "SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "5dfb14e3-f1f6-47f9-a9a2-d071b4bbbf2b",
+                "prev_uuid": "c38a5698-339d-4dc3-920e-f709dcab7ed8"
+            },
+            {
+                "author": "user",
+                "content": "How many subscribed users are there?",
+                "feedback": "",
+                "uuid": "da54c4ee-9733-41c7-8c86-66078fcb714d",
+                "prev_uuid": "5dfb14e3-f1f6-47f9-a9a2-d071b4bbbf2b"
+            },
+            {
+                "content": "SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "95b65cba-af8a-4b91-b847-2570f1701444",
+                "prev_uuid": "da54c4ee-9733-41c7-8c86-66078fcb714d"
+            },
+            {
+                "author": "user",
+                "content": "How many active non-trial subscriptions are there?",
+                "feedback": "",
+                "uuid": "e077ab51-2a4b-4582-8e7c-bc3efe7865f5",
+                "prev_uuid": "95b65cba-af8a-4b91-b847-2570f1701444"
+            },
+            {
+                "content": "SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='PayingSubscription'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "bf1c16a8-cea8-41c5-9114-b4ba8402aed4",
+                "prev_uuid": "e077ab51-2a4b-4582-8e7c-bc3efe7865f5"
+            },
+            {
+                "author": "user",
+                "content": "How many active trial subscriptions are there?",
+                "feedback": "",
+                "uuid": "c2766d4a-2ebc-4ede-90a5-db27a93f7084",
+                "prev_uuid": "bf1c16a8-cea8-41c5-9114-b4ba8402aed4"
+            },
+            {
+                "content": "SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "c4f62008-6362-4c11-9730-fde8c546eb3e",
+                "prev_uuid": "c2766d4a-2ebc-4ede-90a5-db27a93f7084"
+            },
+            {
+                "author": "user",
+                "content": "Which day had the highest number of active subscribers this month?",
+                "feedback": "",
+                "uuid": "11707226-f428-4a87-bcd1-f28197814e0b",
+                "prev_uuid": "c4f62008-6362-4c11-9730-fde8c546eb3e"
+            },
+            {
+                "content": "SELECT daydate, SUM(total) AS subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' AND EXTRACT(MONTH FROM daydate) = (SELECT EXTRACT(MONTH FROM MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') AND EXTRACT(YEAR FROM daydate) = (SELECT EXTRACT(YEAR FROM MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' GROUP BY daydate ORDER BY subs DESC LIMIT 1;",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "b55627ee-e2a6-4f8b-a633-a4abe30940fd",
+                "prev_uuid": "11707226-f428-4a87-bcd1-f28197814e0b"
+            },
+            {
+                "author": "user",
+                "content": "How many users have subscribed today?",
+                "feedback": "",
+                "uuid": "af43db1f-72aa-4aa2-84da-14cdce1fc7ea",
+                "prev_uuid": "b55627ee-e2a6-4f8b-a633-a4abe30940fd"
+            },
+            {
+                "content": "SELECT max(daydate) as daydate,  sum(total) as subs  FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "0927150b-2b11-4d2a-a113-ab639555af2d",
+                "prev_uuid": "af43db1f-72aa-4aa2-84da-14cdce1fc7ea"
+            },
+            {
+                "author": "user",
+                "content": "How many new subscriptions have there been this month?",
+                "feedback": "",
+                "uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76",
+                "prev_uuid": "0927150b-2b11-4d2a-a113-ab639555af2d"
+            },
+            {
+                "content": "SELECT EXTRACT(MONTH FROM max(daydate)) as month, sum(total) as subs  FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' AND EXTRACT(MONTH FROM daydate) = (SELECT EXTRACT(MONTH FROM MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') AND EXTRACT(YEAR FROM daydate) = (SELECT EXTRACT(YEAR FROM MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce')and dimension='subscriptions'",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "d0a16d11-a57e-4279-8e18-ddec56c3a8ef",
+                "prev_uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76"
+            },
+            {
+                "author": "user",
+                "content": "Which month has the most subscriptions in 2023?",
+                "feedback": "",
+                "uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76",
+                "prev_uuid": "0927150b-2b11-4d2a-a113-ab639555af2d"
+            },
+            {
+                "content": "SELECT extract(month from daydate) as month, sum(total) as subs  FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' AND EXTRACT(YEAR FROM daydate) = (SELECT EXTRACT(YEAR FROM MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' group by month order by subs desc limit 1;",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "d0a16d11-a57e-4279-8e18-ddec56c3a8ef",
+                "prev_uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76"
+            },
+            {
+                "author": "user",
+                "content": "What is the most viewed content of this month?",
+                "feedback": "",
+                "uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76",
+                "prev_uuid": "0927150b-2b11-4d2a-a113-ab639555af2d"
+            },
+            {
+                "content": "SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') group by contentname order by playbacks desc limit 1",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "d0a16d11-a57e-4279-8e18-ddec56c3a8ef",
+                "prev_uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76"
+            },
+            {
+                "author": "user",
+                "content": "Which content has been viewed by the most number of people this month?",
+                "feedback": "",
+                "uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76",
+                "prev_uuid": "0927150b-2b11-4d2a-a113-ab639555af2d"
+            },
+            {
+                "content": "SELECT contentname as content,count(distinct userid) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') group by contentname order by playbacks desc limit 1",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "d0a16d11-a57e-4279-8e18-ddec56c3a8ef",
+                "prev_uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76"
+            },
+            {
+                "author": "user",
+                "content": "Give me a ranking of the top 5 most viewed series this year.",
+                "feedback": "",
+                "uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76",
+                "prev_uuid": "0927150b-2b11-4d2a-a113-ab639555af2d"
+            },
+            {
+                "content": "SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and contenttype='SERIES' group by contentname order by playbacks desc limit 5",
+                "author": "bot",
+                "citationMetadata": {
+                    "citations": []
+                },
+                "feedback": "",
+                "uuid": "d0a16d11-a57e-4279-8e18-ddec56c3a8ef",
+                "prev_uuid": "6e9757de-2d0c-4d1c-b4cb-ba3f58ea6d76"
+            }
+        ]
+    }
+}

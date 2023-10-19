@@ -1,6 +1,6 @@
 {
-    "FLASK_SERVER":"http://34.86.187.151:8000",
-    "IP_SERVER": "34.86.187.151",
+    "FLASK_SERVER":"http://localhost:8000",
+    "IP_SERVER": "35.245.166.15",
     "MYSQL_PORT": 3306
 
   }

@@ -10,7 +10,7 @@ with open('config.json') as config_file:
 
 IP_SERVER = config["IP_SERVER"]
 MYSQL_PORT = config["MYSQL_PORT"]
-
+print(IP_SERVER)
 
 connection = mysql.connector.connect(host=IP_SERVER,
                                      user="sergio_remote",
@@ -247,7 +247,42 @@ def clearChats(username):
         print(f"Error al eliminar el registro: {str(e)}")
         connection.rollback()
         return False
+def getAllUsers():
+    sql = "SELECT * FROM user_"
+    cursor.execute(sql)
 
+    # Obtener todas las filas de la consulta
+    nombres_conversaciones = [row[0] for row in cursor]
+    return nombres_conversaciones
 
+def select_option(options, message):
+    while True:
+        for idx, option in enumerate(options, 1):
+            print(idx, " -> ", option)
+
+        choice = input(message)
+
+        if choice.isdigit():
+            choice = int(choice)
+            if 0 < choice <= len(options):
+                return options[choice - 1]
+            else:
+                print("Opción no válida")
+        elif choice.lower() == 'q':
+            return None
+        else:
+            print("Opción no válida")
 if __name__ == '__main__':
+    users = getAllUsers()
+    user = select_option(users, "Selecciona un usuario (o 'q' para salir): ")
+
+    if user is not None:
+        convers = getAllConversationsNames(user)
+        conversation_name = select_option(convers, "Selecciona una conversación (o 'q' para salir): ")
+    if conversation_name is not None:
+        conversation=getConversation(user,conversation_name)
+        with open("output.json","w") as f:
+            simp_conversation = [{"author": msg["author"], "content": msg["content"]} for msg in conversation[1:]]
+            json.dump(simp_conversation,f)
+
     pass
