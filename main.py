@@ -12,10 +12,17 @@ import logging
 import transform_results
 import results_manage
 
-logging.basicConfig(level=logging.INFO, filename='app.log')
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    filename='logs.log',
+)
+# Agrega un manejador de consola
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s'))
 
-logger = logging.getLogger(__name__)
-
+# Agrega el manejador a la raíz del logger
+logging.getLogger().addHandler(handler)
 # Open a cursor to perform database operations
 
 app = Flask(__name__)
@@ -67,8 +74,8 @@ class Chat():
                     if message["uuid"] == feedback['uuid']:
                         message["feedback"] = feedback['feedback']
                         db.give_feedback(feedback.get('prompt'),feedback.get('uuid'),feedback.get('feedback'))
-                        print('encontrado msg')
-        print('busqueda completa')
+                        
+        
     
     
     #guardar mensaje en conversacion o guardar conversacion
@@ -113,7 +120,8 @@ class Chat():
     #reducir tokens de conversacion
     def reduce_tokens(self):
 
-        del self.conversations[self.current_prompt][self.tam_default_len]
+        del self.conversations[self.current_prompt][
+            self.tam_default_len]
     #encontrar query
     def find_start(self, string_principal):
 
@@ -148,7 +156,7 @@ class Chat():
                 select = select[:i] + select[i + 1:]
             else:
                 break
-            # print(respon[i])
+            
         select.replace("'''", "")
         select.replace("```", "")
 
@@ -172,7 +180,6 @@ class Chat():
     def gpt_select(self, prompt):
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = vertex_credentials
         response = asyncio.run(vertex_petition(prompt))
-        print(response)
         # if response['usage']['total_tokens']>3300:
         # self.reduce_tokens()
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = bigquery_credentials
@@ -338,7 +345,7 @@ class Chat():
     def createConversation(self, prompt):
         db.createPromptConversation(self.username, prompt)
         self.get_conversations()
-        print("echo")
+        
 
     
     #obtener nombres de las conversaciones
@@ -393,14 +400,14 @@ def get_conversation_of_prompt():
         chats[username] = Chat(username)
     chat: Chat = chats[username]
     prompt = request.get_json()["name"]
-    print("getting conversation messages",prompt)
+    
     if prompt not in chat.conversations:
-        print("saving conversation messages",prompt)
+        
         chat.createConversation(prompt)
     conversation = chat.conversations_text.get(prompt)
     chat.current_prompt = prompt
     messages = []
-    print(conversation[chat.tam_default_len:])
+    
     for item in conversation:
         msg = {
             "author": item["author"],
@@ -412,7 +419,7 @@ def get_conversation_of_prompt():
             msg["feedback"] = item["feedback"]
 
         messages.append(msg)
-    print("prompt=", prompt)
+    
     return jsonify(messages)
 
 # crear conversacion de un usuario
@@ -420,7 +427,6 @@ def get_conversation_of_prompt():
 
 @app.route("/save-prompt", methods=['POST'])
 def save_prompt():
-    print("savving conversation messages")
     if 'username' not in session:
         return redirect(url_for('index'))
     username = session.get('username')
@@ -434,9 +440,7 @@ def save_prompt():
 
 @app.route('/get_prompts', methods=['GET'])
 def get_prompts():
-    print("getting conversations names")
 
-    print(session.get('username'))
     if 'username' not in session:
         # print(session.get('username'))
         return redirect(url_for('login'))
@@ -467,7 +471,8 @@ def give_feedback():
         "uuid": data['uuid'],
         "feedback": data["feedback"]
     }
-    print(feedback_complete)
+    
+
     chat.give_feedback(feedback_complete)
     return 'Solicitud POST exitosa'
 
@@ -475,7 +480,7 @@ def give_feedback():
 @app.route('/clear_chats', methods=['GET'])
 def clear_chats():
     if 'username' not in session:
-        print(session)
+        
         return redirect(url_for('index'))
     username=session.get('username')
     chat=chats[username]
@@ -494,9 +499,7 @@ def sendmessage():
     requestt = request.get_json()
     ex_request = requestt['text']
     gen_uuid = requestt['uuid']
-    print(type(gen_uuid))
     logging.info("user: "+ username+" sending message on prompt: "+chat.current_prompt)
-    print("user: "+ username+" sending message on prompt: "+chat.current_prompt)
     petition, no_select, gen_uuid = chat.chat(gen_uuid, ex_request)
     if not no_select:
         return jsonify({'reply': petition, 'result': chat.result, 'uuid': gen_uuid})
@@ -507,7 +510,6 @@ def sendmessage():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    print("hola")
     if request.method == 'POST':
         request_json = request.get_json()
         username = request_json.get('username')
@@ -515,7 +517,6 @@ def login():
             chats[username] = Chat(username)
         logging.info("logged user: "+ username)
         session['username'] = username
-        print(session.get('username'))
         return redirect(url_for('chat_web'))
     else:
         return render_template('auth/login.html', config_data=config_data)

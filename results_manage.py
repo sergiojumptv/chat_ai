@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import logging
 
 # Conectarse a la base de datos local (asegúrate de tener MongoDB ejecutándose)
 def agregarResultados(uuid_gen, results):
@@ -8,7 +9,6 @@ def agregarResultados(uuid_gen, results):
         "results":results
     }
     
-    print(uuid_gen)
 
     # Nombre de la base de datos que deseas crear (por ejemplo, "mi_base_de_datos")
     nombre_base_datos = "results_chat"
@@ -18,7 +18,6 @@ def agregarResultados(uuid_gen, results):
     collection=client[nombre_base_datos][nombre_coleccion]
     # Datos para el documento que insertarás en la colección
     collection.insert_one(results_dict)
-    print("results_added")
 
     # Cerrar la conexión
     client.close()
@@ -54,10 +53,12 @@ def getPrompt(prompt):
     # Datos para el documento que insertarás en la colección
     result = collection.find_one({"_id":"dd6d3e2-794f-4321-95dc-97821374f0d4"})
     if result:
-        print("Documento encontrado:")
-        print(result)
+        logging.info("Documento encontrado"+result)
+        
     else:
-        print("Documento no encontrado.")
+        logging.info("Documento no encontrado")
+        
     # Cerrar la conexión
     client.close()
     return result
+

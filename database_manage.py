@@ -1,6 +1,7 @@
 import mysql.connector
 import json
 import uuid
+import logging
 with open('conversations_vertex.json', 'r') as f:
     data = json.load(f)
 
@@ -10,7 +11,6 @@ with open('config.json') as config_file:
 
 IP_SERVER = config["IP_SERVER"]
 MYSQL_PORT = config["MYSQL_PORT"]
-print(IP_SERVER)
 
 connection = mysql.connector.connect(host=IP_SERVER,
                                      user="sergio_remote",
@@ -34,11 +34,11 @@ def agregarUsuario(user_name):
         sql_insert_user = "INSERT INTO user_ (user_name) VALUES (%s)"
         cursor.execute(sql_insert_user, (user_name,))
         connection.commit()
-        print("Usuario agregado exitosamente.")
+        logging.info("Usuario agregado exitosamente.")
         return True
     except mysql.connector.IntegrityError as e:
         # Capturar la excepción si el usuario ya existe
-        print(f"Error: El usuario '{user_name}' ya existe.")
+        logging.info(f"Error: El usuario '{user_name}' ya existe.")
         connection.rollback()
         return False
 
@@ -49,10 +49,10 @@ def agregarConversacion(conversation_name, user_name):
         sql_insert_conversation = "INSERT INTO conversation ( conversation_name, user_name) VALUES (%s, %s)"
         cursor.execute(sql_insert_conversation, (conversation_name, user_name))
         connection.commit()
-        print("Conversación agregada exitosamente.")
+        logging.info("Conversación agregada exitosamente.")
     except mysql.connector.IntegrityError as e:
         # Capturar la excepción si la conversación ya existe
-        print(f"Error: La conversación '{conversation_name}' ya existe.")
+        logging.info(f"Error: La conversación '{conversation_name}' ya existe.")
         connection.rollback()
 
 
@@ -63,10 +63,11 @@ def agregarMensaje(message_uuid, prev_uuid, message_text, author, feedback, user
         cursor.execute(sql_insert_message, (message_uuid, prev_uuid, message_text,
                        author, feedback, conversation_name, user_name, msg_type, origin))
         connection.commit()
-        print("Mensajes agregados exitosamente.")
+        logging.info("Mensajes agregados exitosamente.")
     except mysql.connector.IntegrityError as e:
         # Capturar la excepción si alguno de los mensajes ya existe
-        print(f"Error: Un mensaje ya existen en la conversación.", e)
+        logging.info(f"Error: Un mensaje ya existen en la conversación. {e}" )
+        
         connection.rollback()
 
 
@@ -109,7 +110,7 @@ def getAllConversationsPromptsTexts(user_name):
     for prompt in getAllConversationsNames(user_name):
         conversaciones[prompt] = getConversation(
             user_name, prompt, msg_type='text')
-    print(conversaciones)
+    
     return conversaciones
 
 
@@ -177,7 +178,6 @@ def getConversation(user_name, conversation_name, msg_type='sql'):
         return messages
     except mysql.connector.IntegrityError as e:
         # Capturar la excepción si alguno de los mensajes ya existe
-        print(f"Error: Un mensaje ya existen en la conversación.", e)
         connection.rollback()
         return None
 
@@ -220,7 +220,6 @@ def give_feedback(prompt, uuid, feedback):
         return True
     except mysql.connector.Error as e:
         # Capturar la excepción en caso de error
-        print(f"Error al actualizar el usuario': {str(e)}")
         connection.rollback()
         return False
 
@@ -238,13 +237,12 @@ def clearChats(username):
 
             connection.commit()
 
-            print(f"Registro eliminado exitosamente.")
             return True
         else:
             return False
     except mysql.connector.Error as e:
         # Capturar la excepción en caso de error
-        print(f"Error al eliminar el registro: {str(e)}")
+        
         connection.rollback()
         return False
 def getAllUsers():
@@ -280,7 +278,7 @@ if __name__ == '__main__':
         convers = getAllConversationsNames(user)
         conversation_name = select_option(convers, "Selecciona una conversación (o 'q' para salir): ")
     if conversation_name is not None:
-        conversation=getConversation(user,conversation_name)
+        conversation=getConversation(user,conversation_name,msg_type="sql")
         with open("output.json","w") as f:
             simp_conversation = [{"author": msg["author"], "content": msg["content"]} for msg in conversation[1:]]
             json.dump(simp_conversation,f)

@@ -31,7 +31,7 @@ Table= {table}"""
 
 
 def create_prompt(prompt: list):
-    print("transforming")
+    logging.info("transforming")
     messages = []
     results = results_manage.getAllDocuments()
     for message in prompt:

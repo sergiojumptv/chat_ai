@@ -45,8 +45,6 @@ async def vertex_petition(prompt:list):
             examples.append(inout)
     context=prompt[0]['content']
     message=prompt[-1]['content']
-    print("prompt==",messages)
-    print('message= ',prompt[-1])
-    print()
+
     return petition(context,messages,examples,message)
    
