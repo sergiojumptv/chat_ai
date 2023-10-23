@@ -9,21 +9,16 @@ import os
 import uuid
 import database_manage as db
 import logging
+import logging.config
 import transform_results
 import results_manage
+import yaml
 
-logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s %(message)s',
-    level=logging.INFO,
-    filename='logs.log',
-)
-# Agrega un manejador de consola
-handler = logging.StreamHandler()
-handler.setFormatter(logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s'))
+with open('logging_config.yaml', 'r') as f:
+    config = yaml.safe_load(f.read())
+    logging.config.dictConfig(config)
 
-# Agrega el manejador a la raíz del logger
-logging.getLogger().addHandler(handler)
-# Open a cursor to perform database operations
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tu_clave_secreta_aqui'
@@ -110,6 +105,8 @@ class Chat():
         if prompt != 'default_prompt':
             self.conversations[prompt].append(prepared)
             self.conversations_text[prompt].append(prepared_text)
+            logging.warning(f"{gen_uuid},{prev_uuid},{include},{role},{feedback},{self.username},{prompt}")
+            logging.warning(f"{uuid_user if role=="user" else gen_uuid_text},{prev_uuid_text},{result_text if result_text else include},{role},{feedback},{self.username},{prompt},msg_type={'text'},origin={gen_uuid}")
             db.agregarMensaje(gen_uuid,prev_uuid,include,role,feedback,self.username,prompt)
             db.agregarMensaje(uuid_user if role=="user" else gen_uuid_text,prev_uuid_text,result_text if result_text else include,role,feedback,self.username,prompt,
                               msg_type='text',origin=gen_uuid)

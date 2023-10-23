@@ -6,26 +6,6 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:19] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:19] "[35m[1mPOST /send_message HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:24] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:25] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:25] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:26] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:26] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:26] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:27] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:27] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:27] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:31] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:39:34] "POST /send_message HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8000
@@ -34,106 +14,23 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:30] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:30] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:30] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:31] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:31] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:31] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:32] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:32] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:32] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:34] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 19:56:37] "POST /send_message HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug: * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8000
  * Running on http://192.168.1.138:8000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:46] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:46] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:46] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:47] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:47] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:47] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:48] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:48] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:48] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:48] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:01:51] "POST /send_message HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8000
  * Running on http://192.168.1.138:8000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:13] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:14] "[35m[1mPOST /send_message HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:17] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:18] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:18] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:19] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:19] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:19] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:21] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:21] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:21] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:21] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:03:24] "POST /send_message HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:8000
- * Running on http://192.168.1.138:8000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug: * Restarting with stat
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:47] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:47] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:47] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:48] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:48] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:48] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:49] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:49] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:49] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:49] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:10:52] "POST /send_message HTTP/1.1" 200 -
-INFO:werkzeug: * Detected change in 'c:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 727-204-371
@@ -145,29 +42,6 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:46] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:46] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:46] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:47] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:47] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:47] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:48] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:48] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:48] "GET /static/images/nuevo_prompt.png HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:48] "GET /static/images/mensaje.png HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:49] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:49] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:50] "GET /generate_uuid HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:50] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:root:user: sergioo sending message on prompt: Chat 1
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Hello! How can I help you today?
-INFO:root:Mensajes agregados exitosamente.
-INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:17:53] "POST /send_message HTTP/1.1" 200 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8000
@@ -176,21 +50,200 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 727-204-371
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:21] "GET /chat HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:21] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:22] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "GET /get_prompts HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:23] "GET /generate_uuid HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:34] "GET /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:34] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:34] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:35] "GET /get_prompts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:36] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:36] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:37] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:37] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:37] "GET /generate_uuid HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:37] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
 INFO:root:user: sergioo sending message on prompt: Chat 1
 INFO:root:Mensajes agregados exitosamente.
 INFO:root:Mensajes agregados exitosamente.
 INFO:root:Hello! How can I help you today?
 INFO:root:Mensajes agregados exitosamente.
 INFO:root:Mensajes agregados exitosamente.
-INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:20:26] "POST /send_message HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 20:51:40] "POST /send_message HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug: * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug: * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug: * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:08] "GET /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:08] "GET /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:08] "GET /static/js/chat.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:09] "GET /static/images/salir.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:10] "GET /get_prompts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:10] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:10] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:15] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:15] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:15] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:17] "GET /generate_uuid HTTP/1.1" 200 -
+INFO:root:user: sergioo sending message on prompt: Chat 1
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:I'm sorry, I don't understand what you mean.
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:Mensajes agregados exitosamente.
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:20:20] "POST /send_message HTTP/1.1" 200 -
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:04] "GET /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:04] "GET /chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:04] "GET /static/css/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:04] "GET /static/js/chat.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:04] "GET /static/images/salir.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:05] "GET /get_prompts HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:06] "GET /static/images/nuevo_prompt.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:06] "GET /static/images/mensaje.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:09] "POST /get_conversation_of_prompt HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:10] "GET /generate_uuid HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:10] "GET /static/images/dislike.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:10] "GET /static/images/like.png HTTP/1.1" 200 -
+INFO:root:user: sergioo sending message on prompt: Chat 1
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:Hello! How can I help you today?
+INFO:root:Mensajes agregados exitosamente.
+INFO:root:Mensajes agregados exitosamente.
+INFO:werkzeug:127.0.0.1 - - [22/Oct/2023 21:21:13] "POST /send_message HTTP/1.1" 200 -
+INFO:example:Info message
+WARNING:example:Warning message
+ERROR:example:Error message
+CRITICAL:example:Critical message
+ERROR:root:pepe
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:example:Info message
+WARNING:example:Warning message
+ERROR:example:Error message
+CRITICAL:example:Critical message
+ERROR:root:pepe
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 727-204-371

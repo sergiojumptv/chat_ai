@@ -1,0 +1,537 @@
+[31mERROR   [0m [34mpepe[0m
+[37mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[37mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[32mINFO    [0m [34m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000[0m
+[32mINFO    [0m [34m[33mPress CTRL+C to quit[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[31mERROR   [0m [34mpepe[0m
+[37mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[37mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:41] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:41] "GET /static/css/styles.css HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:42] "GET /static/js/chat.js HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:42] "GET /static/images/salir.png HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:43] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:43] "GET /static/images/nuevo_prompt.png HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [22/Oct/2023 21:44:43] "GET /static/images/mensaje.png HTTP/1.1" 200 -[0m
+[31mERROR   [0m [34mpepe[0m
+[31mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[31mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[31mINFO    [0m [34m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000[0m
+[31mINFO    [0m [34m[33mPress CTRL+C to quit[0m
+[31mINFO    [0m [34m * Restarting with stat[0m
+[31mERROR   [0m [34mpepe[0m
+[31mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[31mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[31mWARNING [0m [34m * Debugger is active![0m
+[31mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[31mERROR   [0m [34mpepe[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[32mINFO    [0m [34m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000[0m
+[32mINFO    [0m [34m[33mPress CTRL+C to quit[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[31mERROR   [0m [34mpepe[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[32mINFO    [0m [34m * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[31m[47mCRITICAL[0m [34mpepe[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[32mINFO    [0m [34m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000[0m
+[32mINFO    [0m [34m[33mPress CTRL+C to quit[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:23] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:23] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:23] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:24] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:25] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:25] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:25] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:25] "GET /static/images/like.png HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:25] "GET /static/images/dislike.png HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:28] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m5c37d6e0-60cc-4368-902a-ebfb9e54dfed,f0543c98-f188-4f62-aa96-ae25d443e5c2,hello,user,,('sergioo', 'Chat 1')[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:27:28] "[35m[1mPOST /send_message HTTP/1.1[0m" 500 -[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[32mINFO    [0m [34m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.138:8000[0m
+[32mINFO    [0m [34m[33mPress CTRL+C to quit[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:51] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:51] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:51] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:52] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:52] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:52] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:53] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:53] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:53] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:55] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34mc175590d-8f7b-4744-a2f9-c68cecdeb4b0,f0543c98-f188-4f62-aa96-ae25d443e5c2,hello,user,,('sergioo', 'Chat 1')[0m
+[33mWARNING [0m [34m6e9d3cdb-13f4-4b60-9614-5b18d36d6cc1,feb18e60-610a-4fa5-8d4d-00fccc54fa3e,hello,user,,sergioo,Chat 1,msg_type=text,origin=c175590d-8f7b-4744-a2f9-c68cecdeb4b0[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[32mINFO    [0m [34mHello! How can I help you today?[0m
+[33mWARNING [0m [34m072982a2-9207-423a-92a3-4b9d0d8f4049,c175590d-8f7b-4744-a2f9-c68cecdeb4b0,Hello! How can I help you today?,bot,,('sergioo', 'Chat 1')[0m
+[33mWARNING [0m [34m9e1097d8-7204-4f1a-bdd6-90eea8e03a4e,6e9d3cdb-13f4-4b60-9614-5b18d36d6cc1,Hello! How can I help you today?,bot,,sergioo,Chat 1,msg_type=text,origin=072982a2-9207-423a-92a3-4b9d0d8f4049[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:29:58] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m * Detected change in 'C:\\Users\\sergi\\python\\chat_ai\\main.py', reloading[0m
+[32mINFO    [0m [34m * Restarting with stat[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[36mDEBUG   [0m [34mChecking bigquery_credentials.json for explicit credentials as part of auth process...[0m
+[33mWARNING [0m [34m * Debugger is active![0m
+[32mINFO    [0m [34m * Debugger PIN: 727-204-371[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:24] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:25] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:25] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:26] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:26] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:26] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:26] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:27] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:27] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:42] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34maf05b718-f77d-4fb6-b55d-925529b6f972,072982a2-9207-423a-92a3-4b9d0d8f4049,How many active trial subscriptions are there?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m6a3a1cdd-c4ca-49d1-aee4-41a229aa0ecc,9e1097d8-7204-4f1a-bdd6-90eea8e03a4e,How many active trial subscriptions are there?,user,,sergioo,Chat 1,msg_type=text,origin=af05b718-f77d-4fb6-b55d-925529b6f972[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mThis service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.[0m
+[36mDEBUG   [0m [34mConverted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)[0m
+[36mDEBUG   [0m [34mMaking request: POST https://oauth2.googleapis.com/token[0m
+[36mDEBUG   [0m [34mStarting new HTTPS connection (1): oauth2.googleapis.com:443[0m
+[36mDEBUG   [0m [34mhttps://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mStarting new HTTPS connection (1): bigquery.googleapis.com:443[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/7864d9d5-a417-4744-8d96-2494acc90808?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/7864d9d5-a417-4744-8d96-2494acc90808?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription', result [{'subs': '18308'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:31:49] "[35m[1mPOST /send_message HTTP/1.1[0m" 500 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:04] "GET /clear_chats HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:05] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34mConversación agregada exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:15] "POST /save-prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:15] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:15] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:15] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:15] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m85fe3c82-5b09-4724-8bf5-828f69d79548,1f59c22a-a551-4203-b1b5-9af7247a415c,How many active trial subscriptions are there?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m3a0778e3-e337-4c74-82ba-892ba56e1b79,,How many active trial subscriptions are there?,user,,sergioo,Chat 1,msg_type=text,origin=85fe3c82-5b09-4724-8bf5-828f69d79548[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/11193d6c-1279-456f-a51e-e09fc6d0ea33?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/11193d6c-1279-456f-a51e-e09fc6d0ea33?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription', result [{'subs': '18308'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34me2b202b5-752a-4902-b919-18fae005000a,85fe3c82-5b09-4724-8bf5-828f69d79548,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m47fcb204-d278-4a85-9ce8-990a305d0ee9,3a0778e3-e337-4c74-82ba-892ba56e1b79,There are 18308 active trial subscriptions.,bot,,sergioo,Chat 1,msg_type=text,origin=e2b202b5-752a-4902-b919-18fae005000a[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:32:22] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:38:07] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m2f088d00-d9f4-4876-b0e9-2d29e672174d,e2b202b5-752a-4902-b919-18fae005000a,hello,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m3b0506ee-79f5-40b4-858b-71b87889c984,47fcb204-d278-4a85-9ce8-990a305d0ee9,hello,user,,sergioo,Chat 1,msg_type=text,origin=2f088d00-d9f4-4876-b0e9-2d29e672174d[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[32mINFO    [0m [34mHello! How can I help you?[0m
+[33mWARNING [0m [34m1f62b7a5-01f2-4426-a2c1-e6fe902095b6,2f088d00-d9f4-4876-b0e9-2d29e672174d,Hello! How can I help you?,bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m976dadb7-3445-40fc-a02e-b5bf43c8a564,3b0506ee-79f5-40b4-858b-71b87889c984,Hello! How can I help you?,bot,,sergioo,Chat 1,msg_type=text,origin=1f62b7a5-01f2-4426-a2c1-e6fe902095b6[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:38:10] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:38:25] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m910c6898-80fc-46c3-9670-2f55c4c1bfd8,1f62b7a5-01f2-4426-a2c1-e6fe902095b6,How many active trial subscriptions are there?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m2987154e-6e96-48b6-9b42-3392b3a52d89,976dadb7-3445-40fc-a02e-b5bf43c8a564,How many active trial subscriptions are there?,user,,sergioo,Chat 1,msg_type=text,origin=910c6898-80fc-46c3-9670-2f55c4c1bfd8[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mResetting dropped connection: bigquery.googleapis.com[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/945c732e-63af-4fda-9f94-64c0378e220e?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/945c732e-63af-4fda-9f94-64c0378e220e?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription', result [{'subs': '18308'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34md8a6d147-d62e-4f1f-9f7c-330cb91b3c58,910c6898-80fc-46c3-9670-2f55c4c1bfd8,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='TrialSubscription',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mf418fa71-3c6c-4741-9129-9fb428715803,2987154e-6e96-48b6-9b42-3392b3a52d89,There are 18308 active trial subscriptions.,bot,,sergioo,Chat 1,msg_type=text,origin=d8a6d147-d62e-4f1f-9f7c-330cb91b3c58[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:38:33] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:40] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m2245b548-534b-44a8-bc27-f1745bfb273a,d8a6d147-d62e-4f1f-9f7c-330cb91b3c58,and non trial?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34meac1fe7a-2b28-4439-a945-e9f48541decd,f418fa71-3c6c-4741-9129-9fb428715803,and non trial?,user,,sergioo,Chat 1,msg_type=text,origin=2245b548-534b-44a8-bc27-f1745bfb273a[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/ca2c3770-d277-4e6e-9a96-b1ad5863bc96?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/ca2c3770-d277-4e6e-9a96-b1ad5863bc96?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='PayingSubscription', result [{'subs': '453392'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34ma1f4f1d3-5802-458c-a1bc-1e629f2ea351,2245b548-534b-44a8-bc27-f1745bfb273a,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='PayingSubscription',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mceda3ad1-02aa-44d3-b664-de087aedc1b7,eac1fe7a-2b28-4439-a945-e9f48541decd,There are 453392 non trial subscriptions.,bot,,sergioo,Chat 1,msg_type=text,origin=a1f4f1d3-5802-458c-a1bc-1e629f2ea351[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:48] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:55] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:57] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:57] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:41:57] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:42:13] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m2cd15586-5fef-4a6f-8afc-78ffdc6444e7,a1f4f1d3-5802-458c-a1bc-1e629f2ea351,How many subscribed users are there?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mf455be29-071c-456b-a704-dcb33b4322b2,ceda3ad1-02aa-44d3-b664-de087aedc1b7,How many subscribed users are there?,user,,sergioo,Chat 1,msg_type=text,origin=2cd15586-5fef-4a6f-8afc-78ffdc6444e7[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/33a7312d-129c-4ec1-b8f6-bbff6a301eb8?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/jobs/33a7312d-129c-4ec1-b8f6-bbff6a301eb8?location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/33a7312d-129c-4ec1-b8f6-bbff6a301eb8?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers', result [{'subs': '467381'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m49a97cbc-a3e6-47bc-89ce-bc1019026eba,2cd15586-5fef-4a6f-8afc-78ffdc6444e7,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m824697a7-6055-4204-9dfc-04450b79ebb5,f455be29-071c-456b-a704-dcb33b4322b2,There are 467381 subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=49a97cbc-a3e6-47bc-89ce-bc1019026eba[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:42:21] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:43:17] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m5d5f4b4e-9b91-4f7a-bc58-7d78c13c6301,49a97cbc-a3e6-47bc-89ce-bc1019026eba,give me relevant data,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m4e3b4ab4-0e78-463f-b236-f87a211587e4,824697a7-6055-4204-9dfc-04450b79ebb5,give me relevant data,user,,sergioo,Chat 1,msg_type=text,origin=5d5f4b4e-9b91-4f7a-bc58-7d78c13c6301[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/72a34b84-b89f-4b38-b9fc-3e16d05be8f1?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/72a34b84-b89f-4b38-b9fc-3e16d05be8f1?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers', result [{'subs': '467381'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m8fa75780-b3a1-43ef-926c-d1061ed84cfe,5d5f4b4e-9b91-4f7a-bc58-7d78c13c6301,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34meb9c49ac-d87e-4131-b24f-cdcc1475d33a,4e3b4ab4-0e78-463f-b236-f87a211587e4,There are 467381 subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=8fa75780-b3a1-43ef-926c-d1061ed84cfe[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:43:24] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:44:29] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34md94896bf-e800-4a28-ac13-7188026994ed,8fa75780-b3a1-43ef-926c-d1061ed84cfe,give a query with an error that can be easy solved,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m10086404-626e-4982-ad78-79582a1bdf6c,eb9c49ac-d87e-4131-b24f-cdcc1475d33a,give a query with an error that can be easy solved,user,,sergioo,Chat 1,msg_type=text,origin=d94896bf-e800-4a28-ac13-7188026994ed[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/02bf56a4-bfcd-4b82-aa3c-6cfd970d9d0a?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/02bf56a4-bfcd-4b82-aa3c-6cfd970d9d0a?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription', result [{'subs': '449206'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m908265ed-8d56-470a-9238-aed7f00cdce5,d94896bf-e800-4a28-ac13-7188026994ed,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m9c012472-7047-4316-b3b8-b94a7bda5a7b,10086404-626e-4982-ad78-79582a1bdf6c,There are 449206 subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=908265ed-8d56-470a-9238-aed7f00cdce5[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:44:38] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:45:42] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34mbe017b93-fa30-4333-ba20-ea28ea4035c0,908265ed-8d56-470a-9238-aed7f00cdce5,that query dont return an error,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m9c13f702-1051-4c23-93c5-852e36ac348a,9c012472-7047-4316-b3b8-b94a7bda5a7b,that query dont return an error,user,,sergioo,Chat 1,msg_type=text,origin=be017b93-fa30-4333-ba20-ea28ea4035c0[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/54e71d34-4226-4f15-bec9-bd4939653987?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/54e71d34-4226-4f15-bec9-bd4939653987?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US', result [{'subs': 'None'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34mb8d51b12-da7a-46d5-aec7-c8936c8a229d,be017b93-fa30-4333-ba20-ea28ea4035c0,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m312aad29-0fab-4ac9-8c3b-9791d6f58d5a,9c13f702-1051-4c23-93c5-852e36ac348a,There are no subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=b8d51b12-da7a-46d5-aec7-c8936c8a229d[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:45:50] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:46:03] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m3993d1a3-b6db-4bd9-9400-07ff9fced41d,b8d51b12-da7a-46d5-aec7-c8936c8a229d,i mean of sintaxis,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m803e9e95-8d51-4c1c-8e6d-cb40c52a0032,312aad29-0fab-4ac9-8c3b-9791d6f58d5a,i mean of sintaxis,user,,sergioo,Chat 1,msg_type=text,origin=3993d1a3-b6db-4bd9-9400-07ff9fced41d[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/bb812409-81be-4963-8257-4a8ced0cad4d?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/bb812409-81be-4963-8257-4a8ced0cad4d?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US', result [{'subs': 'None'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m38839f5d-f202-4253-a8fa-f3880d192279,3993d1a3-b6db-4bd9-9400-07ff9fced41d,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mb32d05ea-247e-449d-934c-eeee3c04084f,803e9e95-8d51-4c1c-8e6d-cb40c52a0032,There are no subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=38839f5d-f202-4253-a8fa-f3880d192279[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:46:11] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:46:39] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m50aaef43-1f34-4065-bfa4-eca0c812a504,38839f5d-f202-4253-a8fa-f3880d192279,whats the last data available,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mbb410803-4188-4a8c-a6b6-1164286ce487,b32d05ea-247e-449d-934c-eeee3c04084f,whats the last data available,user,,sergioo,Chat 1,msg_type=text,origin=50aaef43-1f34-4065-bfa4-eca0c812a504[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/214e507d-a9e8-4836-86e8-e896e67e2343?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/jobs/214e507d-a9e8-4836-86e8-e896e67e2343?location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/214e507d-a9e8-4836-86e8-e896e67e2343?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT max(daydate) as daydate,  sum(total) as subs  FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers', result [{'daydate': '2023-08-26', 'subs': '1007'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34mc4501e41-3ddb-42d7-94c6-1496981642dd,50aaef43-1f34-4065-bfa4-eca0c812a504,SELECT max(daydate) as daydate,  sum(total) as subs  FROM `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_new_subscribers` where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34mb3755dfc-6a0b-41a5-a58d-0f8dc2a3ff85,bb410803-4188-4a8c-a6b6-1164286ce487,The last data available is 2023-08-26 with 1007 subscriptions.,bot,,sergioo,Chat 1,msg_type=text,origin=c4501e41-3ddb-42d7-94c6-1496981642dd[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:46:49] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:47:08] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m9aa382fb-50eb-45e6-9cc1-1b1f7d6200fb,c4501e41-3ddb-42d7-94c6-1496981642dd,search by a column that doesnt exist,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34me9e48576-2a36-49e6-a295-f01a89afbaf5,b3755dfc-6a0b-41a5-a58d-0f8dc2a3ff85,search by a column that doesnt exist,user,,sergioo,Chat 1,msg_type=text,origin=9aa382fb-50eb-45e6-9cc1-1b1f7d6200fb[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/e2b97c2f-33ed-4c1c-9f85-b76673a339a5?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/e2b97c2f-33ed-4c1c-9f85-b76673a339a5?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US', result [{'subs': 'None'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m6a88e106-170d-426c-87f8-3391a505e8fd,9aa382fb-50eb-45e6-9cc1-1b1f7d6200fb,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscribers' and status='PayingSubscription' and country='US',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34maf5d837d-2f49-49a6-ac4f-c103f91880cd,e9e48576-2a36-49e6-a295-f01a89afbaf5,There are no subscribed users.,bot,,sergioo,Chat 1,msg_type=text,origin=6a88e106-170d-426c-87f8-3391a505e8fd[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:47:16] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34mConversación agregada exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:15] "POST /save-prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:15] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:15] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:15] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:27] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Jero[0m
+[33mWARNING [0m [34m0864526b-8902-4eb4-9ebe-430dc473ff95,7e0d9d38-bd7f-4bd0-9b05-c2795b80ec94,give me relevant data,user,,sergioo,Jero[0m
+[33mWARNING [0m [34mf04e044a-4386-4cff-b1fb-6cb927c8712d,,give me relevant data,user,,sergioo,Jero,msg_type=text,origin=0864526b-8902-4eb4-9ebe-430dc473ff95[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/95ba25e6-ae76-42d8-b65c-f5716375509b?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/jobs/95ba25e6-ae76-42d8-b65c-f5716375509b?location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/95ba25e6-ae76-42d8-b65c-f5716375509b?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and contenttype='SERIES' group by contentname order by playbacks desc limit 5, result [{'content': 'When Calls the Heart', 'playbacks': '761510'}, {'content': 'Heartland', 'playbacks': '306409'}, {'content': 'Chesapeake Shores', 'playbacks': '270802'}, {'content': 'Good Witch', 'playbacks': '173350'}, {'content': 'Ride', 'playbacks': '151034'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34mac0a035d-089a-4534-860b-c4d7a1e4730e,0864526b-8902-4eb4-9ebe-430dc473ff95,SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and contenttype='SERIES' group by contentname order by playbacks desc limit 5,bot,,sergioo,Jero[0m
+[33mWARNING [0m [34m3e22fd01-68a4-477a-b6a8-f91b1ae6d89e,f04e044a-4386-4cff-b1fb-6cb927c8712d,When Calls the Heart has 761510 playbacks<br>Heartland has 306409 playbacks<br>Chesapeake Shores has 270802 playbacks<br>Good Witch has 173350 playbacks<br>Ride has 151034 playbacks,bot,,sergioo,Jero,msg_type=text,origin=ac0a035d-089a-4534-860b-c4d7a1e4730e[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:36] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:36] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:49:37] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:50:29] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Jero[0m
+[33mWARNING [0m [34m51b5da33-87c8-4e32-bded-0c5d483b2ac1,ac0a035d-089a-4534-860b-c4d7a1e4730e,make a sitaxis sql error,user,,sergioo,Jero[0m
+[33mWARNING [0m [34mbeb12f40-5700-400f-8cbe-8d0dd99db7a5,3e22fd01-68a4-477a-b6a8-f91b1ae6d89e,make a sitaxis sql error,user,,sergioo,Jero,msg_type=text,origin=51b5da33-87c8-4e32-bded-0c5d483b2ac1[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/7f991635-d361-485f-bab7-ad31f41af4d2?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/7f991635-d361-485f-bab7-ad31f41af4d2?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and contenttype='SERIES' group by contentname order by playbacks desc limit 5, result [{'content': 'When Calls the Heart', 'playbacks': '761510'}, {'content': 'Heartland', 'playbacks': '306409'}, {'content': 'Chesapeake Shores', 'playbacks': '270802'}, {'content': 'Good Witch', 'playbacks': '173350'}, {'content': 'Ride', 'playbacks': '151034'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34m90ef277c-8c36-4d61-be3a-4337e5471d93,51b5da33-87c8-4e32-bded-0c5d483b2ac1,SELECT contentname as content,sum(playback) as playbacks FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and extract(month from daydate) = (SELECT extract(month from MAX(daydate)) FROM `services-pro-368012.stg_services_us_kpi.kpi_content_ranking` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce') and contenttype='SERIES' group by contentname order by playbacks desc limit 5,bot,,sergioo,Jero[0m
+[33mWARNING [0m [34meea467b4-4b25-4119-a8d4-7e6b27e409b2,beb12f40-5700-400f-8cbe-8d0dd99db7a5,SELECT * FROM table WHERE playbacks > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,bot,,sergioo,Jero,msg_type=text,origin=90ef277c-8c36-4d61-be3a-4337e5471d93[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:50:42] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:37] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:38] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:38] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:38] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:44] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:46] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:48] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:48] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:49] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:51:49] "POST /give_feedback HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:18] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:18] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:18] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:18] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:19] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:19] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:20] "GET /clear_chats HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:52:20] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:34] "GET /chat HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:34] "[36mGET /static/js/chat.js HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:35] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:35] "[36mGET /static/images/salir.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:35] "[36mGET /static/images/nuevo_prompt.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34mConversación agregada exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:42] "POST /save-prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:42] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:42] "GET /get_prompts HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:42] "POST /get_conversation_of_prompt HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:43] "GET /generate_uuid HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:43] "[36mGET /static/images/mensaje.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34muser: sergioo sending message on prompt: Chat 1[0m
+[33mWARNING [0m [34m103fde65-fa91-47d4-9a7a-4fcef44f36ea,217b4b56-7bca-451f-921e-f80c5a30987a,How many subscribers came into the service without a free trial?,user,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m12eeb3e8-6964-4693-bb8f-8d91974ed5cd,,How many subscribers came into the service without a free trial?,user,,sergioo,Chat 1,msg_type=text,origin=103fde65-fa91-47d4-9a7a-4fcef44f36ea[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[36mDEBUG   [0m [34mResetting dropped connection: bigquery.googleapis.com[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/services-pro-368012/jobs?prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/b879b392-b6ab-4d45-924a-71df9f4b41c5?maxResults=0&location=US&prettyPrint=false HTTP/1.1" 200 None[0m
+[36mDEBUG   [0m [34mhttps://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/services-pro-368012/queries/b879b392-b6ab-4d45-924a-71df9f4b41c5?fields=jobReference%2CtotalRows%2CpageToken%2Crows&location=US&formatOptions.useInt64Timestamp=True&prettyPrint=false HTTP/1.1" 200 None[0m
+[32mINFO    [0m [34mresponse= SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='PayingSubscription', result [{'subs': '453392'}][0m
+[32mINFO    [0m [34mtransforming[0m
+[36mDEBUG   [0m [34mUsing proactor: IocpProactor[0m
+[33mWARNING [0m [34ma0f35d21-5d61-4f9d-8283-77bf281f5285,103fde65-fa91-47d4-9a7a-4fcef44f36ea,SELECT sum(total) as subs FROM `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers` WHERE brandid = '285df710-355f-11eb-9917-e71a95af48ce' and daydate=(select max(daydate) from `services-pro-368012.stg_services_us_kpi.kpi_total_subscribers`  where brandid = '285df710-355f-11eb-9917-e71a95af48ce') and dimension='subscriptions' and status='PayingSubscription',bot,,sergioo,Chat 1[0m
+[33mWARNING [0m [34m09f4049a-6d7d-4f53-84d4-8ee6f58547b7,12eeb3e8-6964-4693-bb8f-8d91974ed5cd,453392 subscribers came into the service without a free trial.,bot,,sergioo,Chat 1,msg_type=text,origin=a0f35d21-5d61-4f9d-8283-77bf281f5285[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34mMensajes agregados exitosamente.[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:50] "POST /send_message HTTP/1.1" 200 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:50] "[36mGET /static/images/like.png HTTP/1.1[0m" 304 -[0m
+[32mINFO    [0m [34m127.0.0.1 - - [23/Oct/2023 16:54:50] "[36mGET /static/images/dislike.png HTTP/1.1[0m" 304 -[0m

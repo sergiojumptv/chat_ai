@@ -1,0 +1,17 @@
+{
+    "outputColorizer.colorMappings": [
+        {
+            "text": "ERROR",
+            "color": "#FF0000",
+            "backgroundColor": "#FFA07A"
+        },
+        {
+            "text": "WARNING",
+            "color": "#FF8C00"
+        },
+        {
+            "text": "INFO",
+            "color": "#0000FF"
+        }
+    ]
+}
